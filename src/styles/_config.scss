@@ -1,0 +1,16 @@
+// Base font size
+$base-size: 16px;
+
+// Consistent layout settings
+$header-height: 5rem;
+$border-radius: 15px;
+$vertical-spacing: 5.625rem;
+
+// Responsive breakpoints
+$responsiveBreakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+);

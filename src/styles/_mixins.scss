@@ -1,0 +1,99 @@
+@use "sass:map";
+@use "config";
+@use "colors";
+
+/*
+* Utilizes config for variables
+*/
+
+// responsive media query min-width
+@mixin responsive-above($size) {
+    @if not map.get(config.$responsiveBreakpoints, $size) {
+        @error "Breakpoint '#{$size}' not found in map $responsiveBreakpoints";
+    }
+
+    @media screen and (min-width: map.get(config.$responsiveBreakpoints, $size)) {
+        @content;
+    }
+}
+
+// responsive media query max-width
+@mixin responsive-below($size) {
+    @if not map.get(config.$responsiveBreakpoints, $size) {
+        @error "Breakpoint '#{$size}' not found in map $responsive-breakpoints";
+    }
+
+    @media screen and (max-width: (map.get(config.$responsiveBreakpoints, $size) - 1)) {
+        @content;
+    }
+}
+
+// vertical spacing
+@mixin section-padding-y-top {
+    padding-top: config.$vertical-spacing;
+}
+
+@mixin section-padding-y-bottom {
+    padding-bottom: config.$vertical-spacing;
+}
+
+@mixin section-padding-y {
+    @include section-padding-y-top;
+    @include section-padding-y-bottom;
+}
+
+// noise gradient
+@mixin noise-gradient {
+    position: relative;
+
+    &::before {
+        content: '';
+        background-image: url(/img/noise-light.png);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-repeat: repeat;
+        filter: invert(100%);
+        mask-image: linear-gradient(to top, #fff, transparent);
+    }
+}
+
+// Page Header (Hero)
+@mixin page-header {
+    @include section-padding-y;
+    overflow: hidden;
+    text-align: left;
+    text-align: center;
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        h1 {
+            padding: 0;
+            margin: 0;
+            color: colors.color-get(color-5);
+        }
+    }
+
+    .animate {
+        opacity: 0;
+        transform: scale(.5);
+        transition: transform 1s, opacity 1s;
+
+        &--visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+
+//
+@mixin page-content {
+    padding-bottom: config.$vertical-spacing;
+}

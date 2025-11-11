@@ -1,0 +1,82 @@
+@use "colors" as colors;
+
+/* -- Button Mixins -- */
+
+@mixin btn-default {
+    background-color: colors.color-get(color-5);
+    border: 2px solid colors.color-get(color-5);
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .8em 1em;
+    transition: color .1s, background-color .1s, border-color .1s;
+    display: inline-block;
+    font-size: 1.125rem;
+    line-height: 1;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        color: colors.color-get(color-5);
+        background-color: transparent;
+        border-color: colors.color-get(color-5);
+    }
+}
+
+/* -- Old Buttons -- */
+
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    @include btn-default;
+}
+
+/* -- Inverted "#fff" button for dark backgrounds -- */
+
+.button--inverted {
+    @include btn-default;
+
+    color: #fff;
+    border-color: #fff;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: colors.color-get(color-5);
+        background-color: #fff;
+        border-color: #fff;
+    }
+}
+
+/* -- New Core Buttons -- */
+
+.wp-block-buttons {
+    gap: 15px;
+}
+
+.wp-block-button {
+    &.is-style-fill .wp-block-button__link,
+    .wp-block-button__link {
+        transition: color .1s, background-color .1s, border-color .1s;
+
+        &:hover,
+        &:focus {
+            color: colors.color-get(color-5);
+            background-color: transparent;
+            border-color: colors.color-get(color-5);
+        }
+    }
+    &.is-style-outline {
+        .wp-block-button__link {
+            &:hover,
+            &:focus {
+                color: colors.color-get(color-5);
+                background-color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
+}

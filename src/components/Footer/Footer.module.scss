@@ -1,0 +1,79 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/mixins" as mixins;
+
+.siteFooter {
+    background: colors.color-get("color-1");
+    color: colors.color-get("color-3");
+    margin-top: auto;
+
+    h2 {
+        font-family: var(--font-kaushan), "Helvetica Neue", Helvetica, Arial, cursive;
+        color: colors.color-get("color-4");
+        white-space: nowrap;
+
+        span {
+            color: colors.color-get("color-5");
+        }
+    }
+
+    h3 {
+        color: colors.color-get("color-4");
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    a {
+        color: #f6f6f6;
+
+        &:hover,
+        &:focus {
+            color: colors.color-get("color-3");
+        }
+    }
+
+    .emojiHeart {
+        color: red;
+    }
+}
+
+// Footer column styles
+
+.footerColWrapper {
+    @include mixins.section-padding-y;
+    display: flex;
+    flex-direction: row;
+    column-gap: 3.125rem;
+
+    @include mixins.responsive-below("md") {
+        flex-direction: column;
+    }
+}
+
+.footerCol {
+    flex: 1 1 100%;
+}
+
+.footerCol1 {
+    flex: 1 0 25%;
+}
+
+.footerCol2 {
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Footer legal section
+
+.siteFooterLegal {
+    background: colors.color-get("color-0");
+    padding: 1em 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+        font-size: 0.875rem;
+    }
+}

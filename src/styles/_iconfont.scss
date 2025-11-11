@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'iconFont';
+    src: url('/fonts/IconFont/IconFont.woff2') format('woff2'),
+        url('/fonts/IconFont/IconFont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: 'iconFont';
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin: 0 .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-adobe-illustrator:before {
+    content: '\e800';
+}
+
+.icon-adobe-photoshop:before {
+    content: '\e801';
+}
+
+.icon-bootstrap:before {
+    content: '\e802';
+}
+
+.icon-css3:before {
+    content: '\e803';
+}
+
+.icon-d3:before {
+    content: '\e804';
+}
+
+.icon-git:before {
+    content: '\e805';
+}
+
+.icon-google-analytics:before {
+    content: '\e806';
+}
+
+.icon-google-calendar:before {
+    content: '\e807';
+}
+
+.icon-google-maps:before {
+    content: '\e808';
+}
+
+.icon-email:before {
+    content: '\e809';
+}
+
+.icon-html5:before {
+    content: '\e80a';
+}
+
+.icon-instagram:before {
+    content: '\e80b';
+}
+
+.icon-javascript:before {
+    content: '\e80c';
+}
+
+.icon-jquery:before {
+    content: '\e80d';
+}
+
+.icon-jsp:before {
+    content: '\e80e';
+}
+
+.icon-litmus:before {
+    content: '\e80f';
+}
+
+.icon-php:before {
+    content: '\e810';
+}
+
+.icon-pwa:before {
+    content: '\e811';
+}
+
+.icon-react:before {
+    content: '\e812';
+}
+
+.icon-responsive-design:before {
+    content: '\e813';
+}
+
+.icon-soundcloud:before {
+    content: '\e814';
+}
+
+.icon-sql:before {
+    content: '\e815';
+}
+
+.icon-svg:before {
+    content: '\e816';
+}
+
+.icon-twitter:before {
+    content: '\e817';
+}
+
+.icon-ux:before {
+    content: '\e818';
+}
+
+.icon-ui:before {
+    content: '\e819';
+}
+
+.icon-wordpress:before {
+    content: '\e81a';
+}
+
+.icon-logo:before {
+    content: '\e81b';
+}

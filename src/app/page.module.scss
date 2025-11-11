@@ -1,0 +1,346 @@
+@use "../styles/config" as config;
+@use "../styles/mixins" as mixins;
+@use "../styles/colors" as colors;
+@use "../styles/animations";
+
+
+.pageHeader {
+    @include mixins.section-padding-y;
+    position: relative;
+    height: calc(100vh - #{config.$header-height});
+    overflow: hidden;
+    background: colors.color-get(color-1);
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 0 0;
+        background-image: url('/img/home-header.jpg');
+        background-size: cover;
+        background-position: center;
+        animation: bgScaleIn 2s, blur 1.5s linear reverse;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0 0 0 0;
+        box-shadow: inset 0 0 150px #000;
+        opacity: .6;
+    }
+
+    .contentWrapper {
+        z-index: 2;
+        color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 3px 20px rgb(0 0 0 / 70%);
+        width: 100%;
+        margin-left: 0.9375rem;
+        margin-right: 0.9375rem;
+    }
+
+    h1 {
+        margin: 0;
+        display: block;
+        font-weight: 100;
+        font-size: 8.75rem;
+        font-family: var(--font-kaushan), "Helvetica Neue", Helvetica, Arial, cursive;
+        opacity: 0;
+        transition: opacity 1s;
+        color: #fff;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+        }
+
+        @include mixins.responsive-below('lg') {
+            font-size: 6.25rem;
+        }
+
+        @include mixins.responsive-below('md') {
+            font-size: 5rem;
+        }
+
+        @include mixins.responsive-below('sm') {
+            font-size: 3.75rem;
+        }
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: radial-gradient(circle, #fff, transparent);
+        width: 80%;
+        margin: .625rem auto;
+        transform: scaleX(0.25);
+        transition: transform 2s, opacity 1s;
+        border-bottom: none;
+        opacity: 0;
+
+        &:global(.animateVisible) {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+    }
+
+    h2 {
+        font-size: 3.25rem;
+        font-weight: 500;
+        margin: 0 0 1.25rem;
+        opacity: 0;
+        transition: opacity 1s;
+        color: #fff;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+        }
+
+        @include mixins.responsive-below('lg') {
+            font-size: 3rem;
+        }
+
+        @include mixins.responsive-below('md') {
+            font-size: 1.875rem;
+        }
+    }
+
+    .ctaWrapper {
+        opacity: 0;
+        transition: opacity 1s;
+        padding: .5rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+        }
+    }
+}
+
+.intro {
+    background: #fff;
+    overflow: hidden;
+
+    .contentWrapper {
+        opacity: 0;
+        transform: translateY(config.$vertical-spacing);
+        transition: transform 1s, opacity 1s;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.services {
+    .servicesWrapper {
+        display: flex;
+        gap: 5.625rem;
+        justify-content: center;
+        margin-bottom: config.$vertical-spacing;
+
+        @include mixins.responsive-below('xl') {
+            flex-wrap: wrap;
+            gap: 5.625rem;
+        }
+    }
+
+    .service {
+        flex: 1 1 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transform: translateY(0);
+        transition: transform .5s;
+
+        @include mixins.responsive-below('xl') {
+            flex: 0 1 90%;
+            flex-direction: row;
+            text-align: left;
+            gap: 2.8125rem;
+        }
+
+        @include mixins.responsive-below('md') {
+            flex-basis: 80%;
+            text-align: center;
+            flex-direction: column;
+            gap: 0;
+
+            &:not(:last-child):after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: colors.color-get(color-3);
+                position: absolute;
+                bottom: -2.8125rem;
+                left: 50%;
+                margin-left: -25px;
+            }
+        }
+
+        @include mixins.responsive-below('sm') {
+            flex-basis: 100%;
+        }
+
+        .svgWrapper {
+            flex: 1 0 30%;
+
+            svg {
+                height: 175px;
+                width: 100%;
+                display: block;
+                stroke-miterlimit: 5;
+                background-color: inherit;
+
+                g {
+                    fill-opacity: 0;
+                    stroke-dashoffset: 1000;
+                    stroke-dasharray: 1000;
+                    stroke: colors.color-get(color-1);
+                    fill: colors.color-get(color-5);
+                    transition: stroke-dashOffset .5s, fill-opacity .5s;
+                }
+            }
+        }
+
+        // Web Development
+        &:nth-of-type(1) {
+            svg g {
+                stroke-width: 2;
+            }
+
+            .svgWrapper {
+                &:global(.animateVisible) {
+                    svg g {
+                        transition: stroke-dashOffset 2s 0s, fill-opacity .75s 1.25s;
+                        fill-opacity: 1;
+                        stroke-dashOffset: 0;
+                    }
+                }
+            }
+        }
+
+        // SEO
+        &:nth-of-type(2) {
+            svg g {
+                stroke-width: 1.3;
+            }
+
+            .svgWrapper {
+                &:global(.animateVisible) {
+                    svg g {
+                        transition: stroke-dashOffset 3.5s 0s, fill-opacity .75s 1.25s;
+                        fill-opacity: 1;
+                        stroke-dashOffset: 0;
+                    }
+                }
+            }
+        }
+
+        // Content Management
+        &:nth-of-type(3) {
+            svg g {
+                stroke-width: 5;
+                stroke-dashoffset: 2000;
+                stroke-dasharray: 2000;
+            }
+
+            .svgWrapper {
+                &:global(.animateVisible) {
+                    svg g {
+                        transition: stroke-dashOffset 1.5s 0s, fill-opacity .75s 1.25s;
+                        fill-opacity: 1;
+                        stroke-dashOffset: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .contentWrapper {
+        flex: 1 1 auto;
+        opacity: 0;
+        transform: translateY(3.75rem);
+        transition: transform 1s, opacity 1.5s;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h3 {
+            margin-top: 1em;
+
+            @include mixins.responsive-below('xl') {
+                margin-top: 0;
+            }
+
+            @include mixins.responsive-below('md') {
+                margin-top: 1em;
+            }
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // service cta
+    .servicesFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.875rem;
+        flex-wrap: wrap;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 1s .25s;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+        }
+
+        p {
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+}
+
+.cta {
+    background: colors.color-get(color-5);
+    @include mixins.noise-gradient;
+
+    .contentWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 1s, opacity 1s;
+
+        &:global(.animateVisible) {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}

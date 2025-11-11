@@ -1,0 +1,233 @@
+@use "../../styles/config" as config;
+@use "../../styles/colors" as colors;
+@use "../../styles/mixins" as mixins;
+
+.siteHeader {
+    background: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: config.$header-height;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 20%);
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    gap: 3.125rem;
+
+    @include mixins.responsive-below("lg") {
+        gap: 1.875rem;
+    }
+
+    @include mixins.responsive-below("md") {
+        justify-content: space-between;
+    }
+}
+
+/* branding logo */
+.siteBranding {
+    flex-shrink: 0;
+
+    a {
+        display: flex;
+        outline: none;
+        text-decoration: none;
+        font-family: var(--font-kaushan), "Helvetica Neue", Helvetica, Arial, cursive;
+        font-size: 2.25rem;
+        color: colors.color-get("color-1");
+        align-items: center;
+        transition: color 0.2s;
+
+        @include mixins.responsive-below("lg") {
+            font-size: 1.875rem;
+        }
+
+        &:hover,
+        &:focus {
+            color: colors.color-get("color-5");
+        }
+    }
+}
+
+/* logo icon */
+.iconLogo {
+    color: colors.color-get("color-5");
+    font-size: 1.2em;
+    margin-right: 5px;
+
+    &::before {
+        margin: 0;
+    }
+}
+
+/* navigation */
+.siteNavigation {
+    display: flex;
+    height: 100%;
+    background: none;
+    position: relative;
+
+    @include mixins.responsive-below("md") {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: colors.color-get("color-1");
+        height: auto;
+        display: none;
+    }
+
+    &.active {
+        display: flex;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 0 1.875rem;
+
+        @include mixins.responsive-below("md") {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-grow: 1;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    a {
+        padding: 0;
+        text-align: center;
+        transition: color 0.2s;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: colors.color-get("color-1");
+        outline: none;
+
+        @include mixins.responsive-below("lg") {
+            font-size: 1.25rem;
+        }
+
+        @include mixins.responsive-below("md") {
+            color: #fff;
+            padding: 1rem 1.875rem;
+            flex-grow: 1;
+        }
+
+        &:hover,
+        &:focus {
+            color: colors.color-get("color-5");
+
+            @include mixins.responsive-below("md") {
+                color: #fff;
+                background: colors.color-get("color-2");
+            }
+        }
+
+        &.active {
+            color: colors.color-get("color-5");
+
+            @include mixins.responsive-below("md") {
+                background: colors.color-get("color-5");
+                color: #fff;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: colors.color-get("color-5");
+                height: 3px;
+                inset: auto 0 0 0;
+            }
+        }
+    }
+}
+
+/* responsive toggle */
+.menuToggle {
+    position: relative;
+    border: 0;
+    background: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    box-shadow: none;
+
+    @include mixins.responsive-above("md") {
+        display: none;
+    }
+
+    &:hover,
+    &:focus {
+        .hamburgerLine {
+            background-color: colors.color-get("color-5");
+        }
+    }
+
+    &.active {
+        .hamburgerLine1 {
+            transform: rotate(-45deg);
+            top: 22px;
+        }
+
+        .hamburgerLine2 {
+            transform: scaleY(0);
+        }
+
+        .hamburgerLine3 {
+            transform: rotate(45deg);
+            bottom: 22px;
+        }
+
+        .hamburgerLine1,
+        .hamburgerLine3 {
+            margin-right: -1.15em;
+        }
+    }
+}
+
+.hamburgerLine {
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: colors.color-get("color-1");
+    right: 50%;
+    margin-right: -1.25rem;
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+.hamburgerLine1 {
+    top: 10px;
+}
+
+.hamburgerLine2 {
+    top: 50%;
+    margin-top: -3px;
+}
+
+.hamburgerLine3 {
+    bottom: 10px;
+    margin-top: -6px;
+}

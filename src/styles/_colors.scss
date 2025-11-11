@@ -1,0 +1,24 @@
+@use "sass:map";
+
+/*
+  Establishes the color variables for the site
+*/
+
+// Define brand colors
+$colors: (
+    "color-0": #111, // Darkest Gray
+    "color-1": #222, // Dark Gray
+    "color-2": #595c63, // Gray
+    "color-3": #b6b6b6, // Light Gray
+    "color-4": #f6f6f6, // Lighter Gray
+    "color-5": #0E7395, // Blue
+);
+
+// Function to retrieve a color by name
+@function color-get($name) {
+    @if not map.has-key($colors, $name) {
+        @error "Color `#{$name}` not found in map \$colors";
+    }
+
+    @return map.get($colors, $name);
+}
