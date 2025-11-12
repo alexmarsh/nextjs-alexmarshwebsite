@@ -13,7 +13,8 @@ interface SliderProps {
 export default function Slider({ children, interval = 4000 }: SliderProps) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slidesContainerRef = useRef<HTMLDivElement>(null);
-    const timerRef = useRef<NodeJS.Timer | null>(null);
+    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
 
     const numSlides = children.length;
 

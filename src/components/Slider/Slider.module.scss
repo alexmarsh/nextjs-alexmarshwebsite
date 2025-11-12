@@ -1,3 +1,5 @@
+@use "../../styles/colors" as colors;
+
 .carousel {
     overflow: hidden;
     position: relative;
@@ -33,7 +35,7 @@
         margin-top: 15px;
 
         li {
-            background: #b6b6b6;
+            background: colors.color-get(color-3);
             border-radius: 100%;
             cursor: pointer;
             display: block;
@@ -44,6 +46,10 @@
 
             &:before {
                 content: none
+            }
+
+            &.active {
+                background: colors.color-get(color-2);
             }
         }
     }
