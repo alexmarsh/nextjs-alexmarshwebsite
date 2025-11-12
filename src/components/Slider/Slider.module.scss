@@ -1,0 +1,50 @@
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .slider {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transform: translateX(0);
+        transition: transform 1s;
+        width: 100%;
+
+        .slide {
+            flex: 1 0 100%;
+            height: 100%;
+            width: 100%;
+
+            img {
+                margin: 0 auto;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .indicators {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-top: 15px;
+
+        li {
+            background: #b6b6b6;
+            border-radius: 100%;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            margin: 0 5px;
+            padding: 0;
+            width: 15px;
+
+            &:before {
+                content: none
+            }
+        }
+    }
+}
