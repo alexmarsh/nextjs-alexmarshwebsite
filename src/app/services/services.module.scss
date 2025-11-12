@@ -39,7 +39,7 @@
             opacity: 0;
             transition: opacity 1.5s, transform 1s;
 
-            &:global(.animateVisible) {
+            &:global(.animate--visible) {
                 opacity: 1;
                 transform: translateX(0);
             }
@@ -69,7 +69,7 @@
             transform: translateY(3.75rem);
             transition: opacity 1s, transform 1s;
 
-            &:global(.animateVisible) {
+            &:global(.animate--visible) {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -116,7 +116,7 @@
                 transform: translateY(3.75rem);
                 transition: opacity 1s, transform 1s;
 
-                &:global(.animateVisible) {
+                &:global(.animate--visible) {
                     opacity: 1;
                     transform: translateY(0);
 
@@ -221,7 +221,7 @@
             transition: transform 1s, opacity 1s;
             transform-origin: top;
 
-            &:global(.animateVisible) {
+            &:global(.animate--visible) {
                 opacity: 1;
                 transform: scale(1);
             }
@@ -262,7 +262,7 @@
                 margin-left: 0;
             }
 
-            &:global(.animateVisible) {
+            &:global(.animate--visible) {
                 transform: scale(1);
                 opacity: 1;
             }

@@ -24,7 +24,7 @@
             transform: scale(.5);
             transition: transform 1s, opacity 1s;
 
-            &.animateVisible {
+            &.animate--visible {
                 opacity: 1;
                 transform: scale(1);
             }

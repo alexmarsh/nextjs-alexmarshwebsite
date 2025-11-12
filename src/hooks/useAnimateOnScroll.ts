@@ -12,9 +12,9 @@ export default function useAnimateOnScroll() {
             entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animateVisible')
+                        entry.target.classList.add('animate--visible')
                     } else {
-                        entry.target.classList.remove('animateVisible')
+                        entry.target.classList.remove('animate--visible')
                     }
                 })
             },
