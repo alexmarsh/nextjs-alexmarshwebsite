@@ -38,11 +38,11 @@ export default function ContactForm() {
         setErrors({ ...errors, [fieldName]: fieldError })
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         const newErrors: { [K in keyof typeof formData]?: string } = {};
-        
+
         (Object.keys(formData) as (keyof typeof formData)[]).forEach((key) => {
             const error = validateField(key, formData[key])
             if (error) newErrors[key] = error
@@ -53,8 +53,23 @@ export default function ContactForm() {
             return
         }
 
-        console.log('Form submitted:', formData)
-        // TODO: send data to API
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+
+            const result = await res.json()
+            if (res.ok) {
+                alert('Message sent!')
+                setFormData({ name: '', email: '', phone: '', message: '' })
+            } else {
+                alert(result.error || 'Failed to send message')
+            }
+        } catch (err) {
+            alert('An unexpected error occurred')
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
