@@ -73,10 +73,6 @@ blockquote,
 figcaption {
     font-size: 1em;
     line-height: 1.6em;
-
-    @include mixins.responsive-below('sm') {
-        font-size: .8em;
-    }
 }
 
 p {
