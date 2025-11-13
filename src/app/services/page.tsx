@@ -2,6 +2,7 @@
 
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
@@ -26,9 +27,9 @@ export default function Home() {
                 <div className="container">
                     <div className={clsx(styles.carouselWrapper, "animate")}>
                         <Slider interval={5000}>
-                            <img fetchPriority="high" decoding="async" src="/img/portfolio/Ascendant.webp" alt="" />
-                            <img decoding="async" src="/img/portfolio/NextPoint.webp" alt="" />
-                            <img decoding="async" src="/img/portfolio/aspen-surgical.webp" alt="" />
+                            <Image priority src="/img/portfolio/Ascendant.webp" alt="Ascendant website preview" width={768} height={480} />
+                            <Image src="/img/portfolio/NextPoint.webp" alt="NextPoint website preview" width={768} height={480} />
+                            <Image src="/img/portfolio/aspen-surgical.webp" alt="Aspen Surgical website preview" width={768} height={480} />
                         </Slider>
                     </div>
                     <div className={clsx(styles.contentWrapper, "animate")}>

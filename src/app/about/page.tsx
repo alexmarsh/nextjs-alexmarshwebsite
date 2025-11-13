@@ -22,7 +22,7 @@ export default function Home() {
             <section className={clsx(styles.sectionIntro, "section")}>
                 <div className="container">
                     <figure className={clsx(styles.imgWrapper, "animate")}>
-                        <Image src="/img/amarsh-portrait-transparent.webp" alt="Portrait of Alex Marsh" width="445" height="636" sizes="(max-width: 445px) 100vw, 445px"/>
+                        <Image src="/img/amarsh-portrait-transparent.webp" alt="Portrait of Alex Marsh" width={445} height={636}/>
                     </figure>
                     <div className={clsx(styles.contentWrapper, "animate")}>
                         <div className="section-header">
