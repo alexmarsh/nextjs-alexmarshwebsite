@@ -26,9 +26,9 @@ export default function Home() {
                 <div className="container">
                     <div className={clsx(styles.carouselWrapper, "animate")}>
                         <Slider interval={5000}>
-                            <img fetchPriority="high" decoding="async" width="768" height="480" src="https://alexmarshwebsite.com/wp-content/uploads/2025/03/Ascendant-768x480.png" className="attachment-medium_large size-medium_large wp-post-image" alt="" srcSet="https://alexmarshwebsite.com/wp-content/uploads/2025/03/Ascendant-768x480.png 768w, https://alexmarshwebsite.com/wp-content/uploads/2025/03/Ascendant-300x188.png 300w, https://alexmarshwebsite.com/wp-content/uploads/2025/03/Ascendant-1024x640.png 1024w, https://alexmarshwebsite.com/wp-content/uploads/2025/03/Ascendant.png 1200w" sizes="(max-width: 768px) 100vw, 768px" />
-                            <img decoding="async" width="768" height="480" src="https://alexmarshwebsite.com/wp-content/uploads/2024/11/NextPoint-768x480.png" className="attachment-medium_large size-medium_large wp-post-image" alt="" srcSet="https://alexmarshwebsite.com/wp-content/uploads/2024/11/NextPoint-768x480.png 768w, https://alexmarshwebsite.com/wp-content/uploads/2024/11/NextPoint-300x188.png 300w, https://alexmarshwebsite.com/wp-content/uploads/2024/11/NextPoint-1024x640.png 1024w, https://alexmarshwebsite.com/wp-content/uploads/2024/11/NextPoint.png 1200w" sizes="(max-width: 768px) 100vw, 768px" />
-                            <img decoding="async" width="768" height="480" src="https://alexmarshwebsite.com/wp-content/uploads/2022/12/aspen-surgical-768x480.png" className="attachment-medium_large size-medium_large wp-post-image" alt="" srcSet="https://alexmarshwebsite.com/wp-content/uploads/2022/12/aspen-surgical-768x480.png 768w, https://alexmarshwebsite.com/wp-content/uploads/2022/12/aspen-surgical-300x188.png 300w, https://alexmarshwebsite.com/wp-content/uploads/2022/12/aspen-surgical-1024x640.png 1024w, https://alexmarshwebsite.com/wp-content/uploads/2022/12/aspen-surgical.png 1200w" sizes="(max-width: 768px) 100vw, 768px" />
+                            <img fetchPriority="high" decoding="async" src="/img/portfolio/Ascendant.webp" alt="" />
+                            <img decoding="async" src="/img/portfolio/NextPoint.webp" alt="" />
+                            <img decoding="async" src="/img/portfolio/aspen-surgical.webp" alt="" />
                         </Slider>
                     </div>
                     <div className={clsx(styles.contentWrapper, "animate")}>
