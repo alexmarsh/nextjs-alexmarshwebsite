@@ -13,7 +13,7 @@ import ServiceCard from '@/components/cards/ServiceCard/ServiceCard'
 import { technologies } from '@/data/technologies'
 import TechItem from '@/components/TechItem/TechItem'
 
-export default function Home() {
+export default function Services() {
     useAnimateOnScroll()
 
     return (

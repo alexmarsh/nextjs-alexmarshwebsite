@@ -9,7 +9,7 @@ import styles from "./about.module.scss"
 import { experienceData } from '@/data/experience'
 import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard'
 
-export default function Home() {
+export default function About() {
     useAnimateOnScroll()
 
     return (

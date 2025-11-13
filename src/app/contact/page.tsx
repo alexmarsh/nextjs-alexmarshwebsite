@@ -7,7 +7,7 @@ import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
 import styles from "./contact.module.scss"
 import ContactForm from "@/components/forms/ContactForm/ContactForm"
 
-export default function Home() {
+export default function Contact() {
     useAnimateOnScroll()
 
     return (
