@@ -1,16 +1,18 @@
 @use "../../../styles/mixins" as mixins;
 @use "../../../styles/colors" as colors;
+@use "../../../styles/config" as config;
 
 .experienceCard {
     background: #fff;
-    border-radius: 15px;
+    border-radius: config.$border-radius;
     box-shadow: 0 15px 30px rgba(0, 0, 0, .25);
-    padding: 30px; 
-    margin: 0 0 45px;
+    padding: 1.875rem;
+    margin: 0 0 3rem;
     width: 90%;
 
     @include mixins.responsive-below('sm') {
         width: 100%;
+        padding: 1.5rem;
     }
 
     &:nth-child(even) {
@@ -41,11 +43,16 @@
     }
 
     .cardHeader {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
+
+        @include mixins.responsive-below('sm') {
+            margin-bottom: 1.25rem;
+        }
 
         img {
             width: auto;
             max-height: 80px;
+            max-width: 100%;
         }
     }
 
