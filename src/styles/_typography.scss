@@ -1,25 +1,30 @@
 @use "./config" as config;
 @use "./colors" as colors;
+@use "./mixins" as mixins;
 
 html {
-  font-size: config.$base-size;
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    font-size: config.$base-size;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+
+    @include mixins.responsive-below('sm') {
+        font-size: config.$base-size-sm;
+    }
 }
 
 body {
-  color: colors.color-get(color-1);
-  background: colors.color-get(color-4);
-  font-size: 1.375rem;
-  font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.5em;
-  text-rendering: optimizeLegibility;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding-top: config.$header-height;
+    color: colors.color-get(color-1);
+    background: colors.color-get(color-4);
+    font-size: 1.375rem;
+    font-family: var(--font-open-sans), Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-top: config.$header-height;
 }
 
 // Headings
@@ -68,6 +73,10 @@ blockquote,
 figcaption {
     font-size: 1em;
     line-height: 1.6em;
+
+    @include mixins.responsive-below('sm') {
+        font-size: .8em;
+    }
 }
 
 p {
@@ -109,4 +118,11 @@ a {
     &:focus {
         color: inherit;
     }
+}
+
+hr {
+    margin: 1.5625rem 0;
+    background-image: none;
+    border: none;
+    border-bottom: 2px solid #b6b6b6;
 }
