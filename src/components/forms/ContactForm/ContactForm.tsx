@@ -76,7 +76,7 @@ export default function ContactForm() {
                         id="field_0"
                         type="text"
                         name="Name"
-                        className="field-input"
+                        className={clsx("field-input", { "field-input-error": errors.name })}
                         placeholder="Name (required)"
                         autoComplete="on"
                         required
@@ -92,7 +92,7 @@ export default function ContactForm() {
                         id="field_1"
                         type="email"
                         name="Email"
-                        className="field-input"
+                        className={clsx("field-input", { "field-input-error": errors.email })}
                         placeholder="Email (required)"
                         autoComplete="on"
                         required
@@ -108,7 +108,7 @@ export default function ContactForm() {
                         id="field_2"
                         type="text"
                         name="Phone"
-                        className="field-input"
+                        className={clsx("field-input", { "field-input-error": errors.phone })}
                         placeholder="Phone"
                         autoComplete="on"
                         onChange={handleChange}
@@ -122,7 +122,7 @@ export default function ContactForm() {
                     <textarea
                         id="field_3"
                         name="Message"
-                        className="field-input"
+                        className={clsx("field-input", { "field-input-error": errors.message })}
                         placeholder="Message (required)"
                         required
                         onChange={handleChange}

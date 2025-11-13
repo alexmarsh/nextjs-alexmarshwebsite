@@ -35,6 +35,10 @@ select {
 }
 
 .form {
+    .field {
+        padding-bottom: 1.25rem;
+    }
+
     .field-label {
         display: block;
         font-weight: 600;
@@ -47,13 +51,15 @@ select {
         color: #990000;
     }
 
-    .field {
-        padding-bottom: 1.25rem;
+    .field-input {
+        &-error {
+            border: 1px solid #990000;
+        }
     }
 
     .field-error {
         color: #990000;
-        font-size: 0.8em;
-        margin: 0;
+        font-size: 0.75em;
+        margin: .2em 0 0;
     }
 }
