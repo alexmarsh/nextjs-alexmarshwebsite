@@ -44,10 +44,16 @@ select {
     .required-label {
         font-size: .8em;
         vertical-align: top;
-        color: red;
+        color: #990000;
     }
 
     .field {
         padding-bottom: 1.25rem;
+    }
+
+    .field-error {
+        color: #990000;
+        font-size: 0.8em;
+        margin: 0;
     }
 }

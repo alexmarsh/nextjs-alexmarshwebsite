@@ -1,0 +1,17 @@
+@use "../../styles/mixins";
+
+.main {
+    @include mixins.noise-gradient;
+
+    &::before {
+        opacity: .5;
+    }
+}
+
+.sectionForm {
+    padding-top: 0;
+
+    .formContainer {
+        margin: 4rem 0;
+    }
+}

@@ -1,0 +1,44 @@
+@use "../../../styles/mixins";
+
+.contactForm {
+    :global(.field-container) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.875rem;
+
+        @include mixins.responsive-below('lg') {
+            display: block;
+        }
+    }
+
+    :global(.field) {
+        grid-column: 1 / 2;
+
+        &:last-child {
+            grid-column: 2 / 3;
+            grid-row: -1 / 8;
+
+            textarea {
+                width: 100% !important;
+                min-height: 268px;
+            }
+        }
+    }
+
+    :global(.submit-container) {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    :global(.animate) {
+        opacity: 0;
+        transform: scale(.5);
+        transition: transform 1s, opacity 1s;
+
+        &:global(.animate--visible) {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
