@@ -27,9 +27,9 @@ export default function Services() {
                 <div className="container">
                     <div className={clsx(styles.carouselWrapper, "animate")}>
                         <Slider interval={5000}>
-                            <Image priority src="/img/portfolio/Ascendant.webp" alt="Ascendant website preview" width={768} height={480} />
-                            <Image src="/img/portfolio/NextPoint.webp" alt="NextPoint website preview" width={768} height={480} />
-                            <Image src="/img/portfolio/aspen-surgical.webp" alt="Aspen Surgical website preview" width={768} height={480} />
+                            <Image priority src="/img/projects/ascendant.webp" alt="Ascendant website preview" width={768} height={480} />
+                            <Image src="/img/projects/next-point.webp" alt="NextPoint website preview" width={768} height={480} />
+                            <Image src="/img/projects/aspen-surgical.webp" alt="Aspen Surgical website preview" width={768} height={480} />
                         </Slider>
                     </div>
                     <div className={clsx(styles.contentWrapper, "animate")}>
