@@ -1,0 +1,80 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/colors" as colors;
+
+.experienceCard {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .25);
+    padding: 30px; 
+    margin: 0 0 45px;
+    width: 90%;
+
+    @include mixins.responsive-below('sm') {
+        width: 100%;
+    }
+
+    &:nth-child(even) {
+        margin-left: auto;
+    }
+
+    &::before {
+        content: none;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:global(.animate) {
+        opacity: 0;
+        transform: translateX(-20%);
+        transition: transform 1s, opacity 1s;
+
+        &:nth-child(even) {
+            transform: translateX(20%);
+        }
+
+        &:global(.animate--visible) {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    .cardHeader {
+        margin-bottom: 30px;
+
+        img {
+            width: auto;
+            max-height: 80px;
+        }
+    }
+
+    .cardContent {
+        >*:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h3 {
+        font-size: 2.25rem;
+        padding: 0;
+        margin: 0;
+        color: colors.color-get(color-5);
+        font-weight: 700;
+    }
+
+    .employment,
+    .dates {
+        margin-bottom: 0;
+    }
+
+    .employment {
+        font-weight: 600;
+    }
+
+    .dates {
+        color: colors.color-get(color-3);
+        font-weight: 600;
+        font-size: .9em;
+    }
+}
