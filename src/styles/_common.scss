@@ -10,6 +10,11 @@
     margin-right: auto;
     float: none;
     position: relative;
+    
+    @include mixins.responsive-below('sm') {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 
 .section {
