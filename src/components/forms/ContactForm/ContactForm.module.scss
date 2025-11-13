@@ -42,3 +42,12 @@
         }
     }
 }
+
+.successMessage,
+.errorMessage {
+    font-weight: bold;
+}
+
+.errorMessage {
+    color: #990000;
+}

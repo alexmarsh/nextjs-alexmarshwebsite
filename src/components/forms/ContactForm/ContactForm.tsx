@@ -15,6 +15,8 @@ export default function ContactForm() {
     })
 
     const [errors, setErrors] = useState<{ [K in keyof typeof formData]?: string }>({})
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+    const [serverError, setServerError] = useState<string | null>(null)
 
     const validateField = (name: keyof typeof formData, value: string) => {
         switch (name) {
@@ -38,8 +40,15 @@ export default function ContactForm() {
         setErrors({ ...errors, [fieldName]: fieldError })
     }
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const fieldName = e.target.name.toLowerCase() as keyof typeof formData
+        setFormData({ ...formData, [fieldName]: e.target.value })
+        setErrors({ ...errors, [fieldName]: '' })
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setServerError(null)
 
         const newErrors: { [K in keyof typeof formData]?: string } = {};
 
@@ -62,20 +71,21 @@ export default function ContactForm() {
 
             const result = await res.json()
             if (res.ok) {
-                alert('Message sent!')
+                setStatus('success')
                 setFormData({ name: '', email: '', phone: '', message: '' })
             } else {
-                alert(result.error || 'Failed to send message')
+                setServerError(result.error || 'Failed to send message')
+                setStatus('error')
             }
         } catch (err) {
-            alert('An unexpected error occurred')
+            console.error(err)
+            setServerError('An unexpected error occurred')
+            setStatus('error')
         }
     }
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const fieldName = e.target.name.toLowerCase() as keyof typeof formData
-        setFormData({ ...formData, [fieldName]: e.target.value })
-        setErrors({ ...errors, [fieldName]: '' })
+    if (status === 'success') {
+        return <p className={styles.successMessage}>Thanks! Your message has been sent.</p>
     }
 
     return (
@@ -84,6 +94,10 @@ export default function ContactForm() {
             onSubmit={handleSubmit}
             noValidate
         >
+            {status === 'error' && serverError && (
+                <p className={styles.errorMessage}>{serverError}</p>
+            )}
+
             <div className="field-container">
                 <div className="field field-name">
                     <label className="field-label" htmlFor="field_0">Name <span className="required-label">*</span></label>
