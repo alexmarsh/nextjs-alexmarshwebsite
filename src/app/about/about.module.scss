@@ -30,6 +30,9 @@
         border-radius: config.$border-radius;
         margin: 0;
         margin-top: 30px;
+        flex: 1 1 33%;
+        width: 100%;
+        max-width: 445px;
 
         &:global(.animate) {
             transform: translateX(-50%);
@@ -43,7 +46,7 @@
             height: auto;
             width: calc(100% + 6%);
             max-width: 100%;
-            vertical-align: bottom;
+            display: block;
 
             @include mixins.responsive-below('lg') {
                 right: 0;
@@ -54,7 +57,7 @@
     }
 
     .contentWrapper {
-        flex: 1 1 60%;
+        flex: 1 1 67%;
 
         &:global(.animate) {
             transform: translateX(50%);
