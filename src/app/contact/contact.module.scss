@@ -14,4 +14,15 @@
     .formContainer {
         margin: 4rem 0;
     }
+
+    :global(.animate) {
+        opacity: 0;
+        transform: scale(.5);
+        transition: transform 1s, opacity 1s;
+
+        &:global(.animate--visible) {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 }
