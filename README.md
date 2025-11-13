@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Headless Version of alexmarshwebsite.com
 
-## Getting Started
+## Overview  
+This project is a headless rebuild of [alexmarshwebsite.com](https://alexmarshwebsite.com), originally built on WordPress with custom Gutenberg components. The new version uses **Sanity** as the content backend and **Next.js** for a React-based frontend with server-side rendering (SSR). The goal is a pixel-perfect, feature-complete reproduction optimized for performance, accessibility, and SEO.
 
-First, run the development server:
+Eventually, this will serve as a case study comparing speed, SEO, and developer experience between WordPress and the headless JAMstack setup.
 
+## Current Status  
+- Core app structure and routing implemented  
+- Sanity schemas designed for some site content  
+- Initial custom components built (Home Hero, Page Header, Button Group, etc.)  
+- Content fetching and rendering pipelines working  
+- Development and deployment pipelines established  
+
+## Tech Stack  
+- **Frontend:** Next.js (React, TypeScript)  
+- **Backend CMS:** Sanity.io (headless CMS)  
+- **Styling:** SCSS Modules, clsx for conditional class names  
+- **Data Fetching:** GROQ queries via Sanity client  
+- **Hosting:** (Not yet established, e.g., Vercel)  
+
+## Getting Started  
+
+### Prerequisites  
+- Node.js 18+  
+- npm or yarn  
+- Sanity CLI installed globally (`npm install -g @sanity/cli`)  
+
+### Setup  
+**1. Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/alexmarsh/alexmarshwebsite-headless.git
+cd alexmarshwebsite-headless
 ```
+**2. Install dependencies and start Sanity Studio**
+```bash
+cd alexmarshwebsite-headless/sanity
+npm install
+npm run dev
+```
+- Sanity Studio will be available at http://localhost:3333 by default.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**3. In a new terminal, install dependencies and start the Frontend**
+```bash
+cd alexmarshwebsite-headless/frontend
+npm install
+npm run dev
+```
+- Next.js frontend will be available at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future Plans  
+- Expand component library and content types  
+- Implement incremental static regeneration (ISR) and preview mode  
+- Conduct detailed speed and SEO comparisons with WordPress site  
+- Improve documentation and onboarding for contributors  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License & Copyright  
+© 2025 Alex Marsh. All rights reserved.  
+Unauthorized copying, distribution, or use of this code or site content is strictly prohibited.
