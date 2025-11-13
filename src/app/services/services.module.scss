@@ -15,12 +15,13 @@
 
     :global(.container) {
         display: flex;
-        gap: 90px;
+        gap: 5rem;
         align-items: flex-start;
 
         @include mixins.responsive-below('xl') {
             flex-direction: column-reverse;
             align-items: center;
+            gap: 3rem;
         }
     }
 
