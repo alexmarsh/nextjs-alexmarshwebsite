@@ -1,96 +1,124 @@
 // src/data/technologies.ts
 
+import { 
+    FaBootstrap, 
+    FaCss3, 
+    FaGit, 
+    FaHtml5, 
+    FaInstagram, 
+    FaJava,
+    FaJs, 
+    FaMobileAlt,
+    FaMousePointer,
+    FaPhp, 
+    FaTwitter,
+    FaWordpress,
+} from 'react-icons/fa';
+import { 
+    SiAdobeillustrator,
+    SiAdobephotoshop,
+    SiD3Dotjs, 
+    SiGoogleanalytics,
+    SiGooglecalendar,
+    SiGooglemaps,
+    SiJquery, 
+    SiPostgresql, 
+    SiPwa, 
+    SiSoundcloud,
+    SiSvg
+} from 'react-icons/si';
+
 export const technologies = [
     {
         title: 'Adobe Illustrator',
-        icon: 'icon-adobe-illustrator'
+        icon: SiAdobeillustrator
     },
     {
         title: 'Adobe Photoshop',
-        icon: 'icon-adobe-photoshop'
+        icon: SiAdobephotoshop
     },
     {
         title: 'Bootstrap',
-        icon: 'icon-bootstrap'
+        icon: FaBootstrap
     },
     {
         title: 'CSS3',
-        icon: 'icon-css3'
+        icon: FaCss3
     },
     {
         title: 'D3.js',
-        icon: 'icon-d3'
+        icon: SiD3Dotjs
     },
     {
         title: 'Git',
-        icon: 'icon-git'
+        icon: FaGit
     },
     {
         title: 'Google Analytics',
-        icon: 'icon-google-analytics'
+        icon: SiGoogleanalytics
     },
     {
         title: 'Google Calendar API',
-        icon: 'icon-google-calendar'
+        icon: SiGooglecalendar
     },
     {
         title: 'Google Maps API',
-        icon: 'icon-google-maps'
+        icon: SiGooglemaps
     },
     {
         title: 'HTML5',
-        icon: 'icon-html5'
+        icon: FaHtml5
     },
     {
         title: 'Instagram API',
-        icon: 'icon-instagram'
+        icon: FaInstagram
     },
     {
         title: 'JavaScript',
-        icon: 'icon-javascript'
+        icon: FaJs
     },
     {
         title: 'jQuery',
-        icon: 'icon-jquery'
+        icon: SiJquery
     },
     {
         title: 'JSP / JSTL',
-        icon: 'icon-jsp'
+        icon: FaJava
     },
     {
         title: 'PHP',
-        icon: 'icon-php'
+        icon: FaPhp
     },
     {
         title: 'Progressive Web Apps',
-        icon: 'icon-pwa'
+        icon: SiPwa
     },
     {
         title: 'Responsive Design',
-        icon: 'icon-responsive-design'
+        icon: FaMobileAlt
     },
     {
         title: 'SoundCloud API',
-        icon: 'icon-soundcloud'
+        icon: SiSoundcloud
     },
     {
         title: 'SQL / PostgreSQL',
-        icon: 'icon-sql'
+        icon: SiPostgresql
     },
     {
         title: 'SVG',
-        icon: 'icon-svg'
+        icon: SiSvg
     },
     {
         title: 'Twitter API',
-        icon: 'icon-twitter'
+        icon: FaTwitter
     },
     {
         title: 'UI/UX',
-        icon: 'icon-ui'
+        icon: FaMousePointer
     },
     {
         title: 'WordPress',
-        icon: 'icon-wordpress'
+        icon: FaWordpress
     }
-]
+];
