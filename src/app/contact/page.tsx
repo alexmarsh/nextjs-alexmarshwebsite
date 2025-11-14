@@ -1,30 +1,19 @@
-// src/app/about/page.tsx
+// src/app/contact/page.tsx
 
-'use client'
-
+import type { Metadata } from "next"
 import clsx from "clsx"
-import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
 import styles from "./contact.module.scss"
-import ContactForm from "@/components/forms/ContactForm/ContactForm"
+import PageContent from './PageContent'
+
+export const generateMetadata = (): Metadata => ({
+    title: 'Contact - Alex Marsh',
+    description: "Want to get in touch? I'd love the chance to talk with you about bringing your website visions to life and improving your online presence. Contact me via the form and I'll get back to you as soon as possible!"
+})
 
 export default function Contact() {
-    useAnimateOnScroll()
-
     return (
         <main className={clsx(styles.main, "site-main")}>
-            <header className={clsx(styles.pageHeader, "page-header")}>
-                <div className="container">
-                    <h1 className="heading animate">Contact</h1>
-                </div>
-            </header>
-            <section className={clsx(styles.sectionForm, "section")}>
-                <div className="container">
-                    <p className="animate">Want to get in touch? I'd love the chance to talk with you about bringing your website visions to life and improving your online presence. Fill out the form below and I'll get back to you as soon as possible!</p>
-                    <div className={clsx(styles.formContainer, "animate")}>
-                        <ContactForm/>
-                    </div>
-                </div>
-            </section>
+            <PageContent />
         </main>
     )
 }
