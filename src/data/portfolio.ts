@@ -6,7 +6,7 @@ import { TechnologyTitle } from './technologies';
 export interface Project {
     title: string
     slug: string
-    excerpt: string
+    projectType: string
     image: string
     jobTitle: JobTitle
     technologies: TechnologyTitle[]
@@ -16,7 +16,7 @@ export const portfolio: Project[] = [
     {
         title: "Ascendant",
         slug: "ascendant",
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/ascendant.webp",
         jobTitle: "[Re]noun Creative",
         technologies: [
@@ -32,7 +32,7 @@ export const portfolio: Project[] = [
     {
         title: "NextPoint LLC",
         slug: "nextpoint-llc",
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/next-point.webp",
         jobTitle: "[Re]noun Creative",
         technologies: [
@@ -50,7 +50,7 @@ export const portfolio: Project[] = [
     {
         title: "Aspen Surgical",
         slug: 'aspen-surgical',
-        excerpt: "E-Commerce WordPress Site",
+        projectType: "E-Commerce WordPress Site",
         image: "/img/portfolio/aspen-surgical.webp",
         jobTitle: "Flynn",
         technologies: [
@@ -69,7 +69,7 @@ export const portfolio: Project[] = [
     {
         title: "Segar & Sciortino",
         slug: 'segar-law',
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/segar-law.webp",
         jobTitle: "Flynn",
         technologies: [
@@ -88,7 +88,7 @@ export const portfolio: Project[] = [
     {
         title: "Rochester Nativity Preparatory Academy",
         slug: 'rochester-nativity-preparatory-academy',
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/roch-nat-prep.webp",
         jobTitle: "Flynn",
         technologies: [
@@ -107,7 +107,7 @@ export const portfolio: Project[] = [
     {
         title: "Rochester Colonial Jingle",
         slug: 'rochester-colonial-jingle',
-        excerpt: "WordPress Brochure Site",
+        projectType: "WordPress Brochure Site",
         image: "/img/portfolio/rochester-colonial-jingle.webp",
         jobTitle: "Flynn",
         technologies: [
@@ -125,7 +125,7 @@ export const portfolio: Project[] = [
     {
         title: "Floral Systems",
         slug: 'floral-systems',
-        excerpt: "Custom Frontend",
+        projectType: "Custom Frontend",
         image: "/img/portfolio/floral-systems.webp",
         jobTitle: "Floral Systems",
         technologies: [
@@ -142,7 +142,7 @@ export const portfolio: Project[] = [
     {
         title: "The Connector",
         slug: "the-connector",
-        excerpt: "Frontend Development Consult",
+        projectType: "Frontend Development Consult",
         image: "/img/portfolio/the-connector.webp",
         jobTitle: "Ryan Specialty",
         technologies: [
@@ -157,7 +157,7 @@ export const portfolio: Project[] = [
     {
         title: "Alchemy Wine & Beer",
         slug: "alchemy-wine-beer",
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/alchemy.webp",
         jobTitle: "Alex Marsh Web Development",
         technologies: [
@@ -182,7 +182,7 @@ export const portfolio: Project[] = [
     {
         title: "Findr",
         slug: "findr",
-        excerpt: "Progressive Web App",
+        projectType: "Progressive Web App",
         image: "/img/portfolio/findr.webp",
         jobTitle: "Alex Marsh Web Development",
         technologies: [
@@ -199,7 +199,7 @@ export const portfolio: Project[] = [
     {
         title: "Knight Chase",
         slug: "knight-chase",
-        excerpt: "Web Challenge",
+        projectType: "Web Challenge",
         image: "/img/portfolio/knight-chase.webp",
         jobTitle: "Alex Marsh Web Development",
         technologies: [
@@ -213,7 +213,7 @@ export const portfolio: Project[] = [
     {
         title: "Darling Harbor Band",
         slug: "darling-harbor-band",
-        excerpt: "Responsive Single-page Website",
+        projectType: "Responsive Single-page Website",
         image: "/img/portfolio/darling-harbor.webp",
         jobTitle: "Alex Marsh Web Development",
         technologies: [
@@ -233,7 +233,7 @@ export const portfolio: Project[] = [
     {
         title: "Citi Commercial Bank",
         slug: "citi-commercial-bank",
-        excerpt: "Dynamic Responsive Website",
+        projectType: "Dynamic Responsive Website",
         image: "/img/portfolio/citi-commercial-bank.webp",
         jobTitle: "Citi",
         technologies: [
@@ -249,7 +249,7 @@ export const portfolio: Project[] = [
     {
         title: "Le Bistro",
         slug: "le-bistro",
-        excerpt: "Custom WordPress Theme",
+        projectType: "Custom WordPress Theme",
         image: "/img/portfolio/le-bistro.webp",
         jobTitle: "Alex Marsh Web Development",
         technologies: [
@@ -264,7 +264,7 @@ export const portfolio: Project[] = [
     {
         title: "Project Management Portal",
         slug: "project-management-portal",
-        excerpt: "Web Application",
+        projectType: "Web Application",
         image: "/img/portfolio/project-management-portal.webp",
         jobTitle: "Citi",
         technologies: [
@@ -280,7 +280,7 @@ export const portfolio: Project[] = [
     {
         title: "Corporate Events Map",
         slug: "citi-corporate-events-map",
-        excerpt: "Custom JavaScript Web Tool",
+        projectType: "Custom JavaScript Web Tool",
         image: "/img/portfolio/citi-events.webp",
         jobTitle: "Citi",
         technologies: [
@@ -294,7 +294,7 @@ export const portfolio: Project[] = [
     {
         title: "Client Advisory Board",
         slug: "citi-client-advisory-board",
-        excerpt: "Responsive Event Website",
+        projectType: "Responsive Event Website",
         image: "/img/portfolio/citi-client-advisory-board.webp",
         jobTitle: "Citi",
         technologies: [
@@ -308,7 +308,7 @@ export const portfolio: Project[] = [
     {
         title: "Responsive HTML Email Templates",
         slug: "citi-responsive-html-emails",
-        excerpt: "Responsive Cross-platform Emails",
+        projectType: "Responsive Cross-platform Emails",
         image: "/img/portfolio/citi-emails.webp",
         jobTitle: "Citi",
         technologies: [
@@ -318,7 +318,7 @@ export const portfolio: Project[] = [
     {
         title: "Mattel Customer Service",
         slug: "mattel-customer-service",
-        excerpt: "Frontend E-commerce Development",
+        projectType: "Frontend E-commerce Development",
         image: "/img/portfolio/mattel.webp",
         jobTitle: "AURORA Consulting Group",
         technologies: [
@@ -330,7 +330,7 @@ export const portfolio: Project[] = [
     {
         title: "Transaction Highlights Map",
         slug: "citi-transaction-highlights-map",
-        excerpt: "Custom JavaScript Web Tool",
+        projectType: "Custom JavaScript Web Tool",
         image: "/img/portfolio/citi-transaction-highlights.webp",
         jobTitle: "Citi",
         technologies: [

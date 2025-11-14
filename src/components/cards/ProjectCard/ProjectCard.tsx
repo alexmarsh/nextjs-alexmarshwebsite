@@ -8,7 +8,7 @@ import Image from 'next/image'
 interface ProjectCardProps {
     title: string
     slug: string
-    excerpt: string
+    projectType: string
     image: string
     loading?: 'lazy' | 'eager'
 }
@@ -16,7 +16,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
     title,
     slug,
-    excerpt,
+    projectType,
     image,
     loading = 'lazy',
 }: ProjectCardProps) {
@@ -33,7 +33,7 @@ export default function ProjectCard({
                 />
                 <div className={styles.projectDesc}>
                     <h2 className={styles.projectTitle}>{title}</h2>
-                    <p className={styles.projectExcerpt}>{excerpt}</p>
+                    <p className={styles.projectType}>{projectType}</p>
                 </div>
             </Link>
         </div>
