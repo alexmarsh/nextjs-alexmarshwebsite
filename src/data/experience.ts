@@ -1,8 +1,20 @@
 // src/data/experience.ts
 
+export const jobTitles = [
+    'Alex Marsh Web Development',
+    '[Re]noun Creative',
+    'Flynn',
+    'Ryan Specialty',
+    'Floral Systems',
+    'Citi',
+    'AURORA Consulting Group',
+] as const
+
+export type JobTitle = typeof jobTitles[number]
+
 export interface Job {
     logo: string
-    title: string
+    title: JobTitle
     role: string
     employment_type: string
     start_date: string

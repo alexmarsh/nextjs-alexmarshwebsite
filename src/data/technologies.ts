@@ -13,7 +13,9 @@ import {
     FaPhp, 
     FaTwitter,
     FaWordpress,
-} from 'react-icons/fa';
+} 
+from 'react-icons/fa';
+
 import { 
     SiAdobeillustrator,
     SiAdobephotoshop,
@@ -26,7 +28,10 @@ import {
     SiPwa, 
     SiSoundcloud,
     SiSvg
-} from 'react-icons/si';
+} 
+from 'react-icons/si';
+
+export type TechnologyTitle = (typeof technologies)[number]['title'];
 
 export const technologies = [
     {
@@ -121,4 +126,4 @@ export const technologies = [
         title: 'WordPress',
         icon: FaWordpress
     }
-];
+] as const;
