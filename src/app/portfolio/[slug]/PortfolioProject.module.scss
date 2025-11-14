@@ -1,0 +1,45 @@
+@use "../../../styles/config" as config;
+@use "../../../styles/colors" as colors;
+
+.portfolioProject {
+    padding-bottom: 5rem;
+
+    .projectImage {
+        margin: calc(config.$vertical-spacing / 2) auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 0.9375rem;
+    }
+
+    hr {
+        margin-bottom: 1rem;
+    }
+
+    .pillList {
+        overflow: hidden;
+
+        li {
+            background: colors.color-get(color-1);
+            color: colors.color-get(color-4);
+            padding: 0 0.5em;
+            line-height: 2em;
+            margin-bottom: 0.3em;
+            margin-right: 0.3em;
+            border-radius: 0.2em;
+            font-size: .8em;
+            transition: background .25s;
+            float: left;
+            cursor: default;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+}
