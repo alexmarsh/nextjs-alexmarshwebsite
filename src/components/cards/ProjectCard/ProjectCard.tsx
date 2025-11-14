@@ -25,8 +25,8 @@ export default function ProjectCard({
                 src={image} 
                 alt={`${title} Project`} 
                 className={styles.projectImage} 
-                width={1200} 
-                height={750} 
+                width={400} 
+                height={250} 
                 loading={loading}
             />
             <div className={styles.projectDesc}>
