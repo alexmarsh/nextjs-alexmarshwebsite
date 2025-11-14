@@ -1,5 +1,6 @@
 // src/app/layout.tsx
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -35,6 +36,7 @@ export default async function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" className={`${openSans.variable} ${kaushanScript.variable}`}>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
             <body className="body">
                 <a className="skip-link sr-only" href="#site-main">Skip to content</a>
                 <Header />
