@@ -16,6 +16,7 @@ export default function Portfolio() {
     const [selectedTech, setSelectedTech] = useState<TechnologyTitle | ''>('')
     const [selectedJob, setSelectedJob] = useState<JobTitle | ''>('')
 
+    // Filtered projects based on current selections
     const filteredPortfolio = useMemo(() => {
         return portfolio.filter(project => {
             const matchesTech = selectedTech ? project.technologies.includes(selectedTech) : true
@@ -24,12 +25,25 @@ export default function Portfolio() {
         })
     }, [selectedTech, selectedJob])
 
-    const handleReset = (e: React.FormEvent) => {
-        e.preventDefault()
+    // Compute available technologies based on selected job
+    const availableTechnologies = useMemo(() => {
+        return technologies
+            .map(t => t.title)
+            .filter(title => !selectedJob || portfolio.some(p => p.jobTitle === selectedJob && p.technologies.includes(title)))
+    }, [selectedJob])
+
+    // Compute available job titles based on selected technology
+    const availableJobs = useMemo(() => {
+        return experience
+            .map(j => j.title)
+            .filter(title => !selectedTech || portfolio.some(p => p.jobTitle === title && p.technologies.includes(selectedTech)))
+    }, [selectedTech])
+
+    const handleReset = () => {
         setSelectedTech('')
         setSelectedJob('')
     }
-    
+
     useAnimateOnScroll([filteredPortfolio.length])
 
     return (
@@ -51,9 +65,9 @@ export default function Portfolio() {
                                 onChange={(e) => setSelectedTech(e.target.value as TechnologyTitle | '')}
                             >
                                 <option value="">Any technology</option>
-                                {technologies.map((tech, i) => (
-                                    <option key={i} value={tech.title}>
-                                        {tech.title}
+                                {availableTechnologies.map((tech, i) => (
+                                    <option key={i} value={tech}>
+                                        {tech}
                                     </option>
                                 ))}
                             </select>
@@ -66,9 +80,9 @@ export default function Portfolio() {
                                 onChange={(e) => setSelectedJob(e.target.value as JobTitle | '')}
                             >
                                 <option value="">Any job</option>
-                                {experience.map((job, index) => (
-                                    <option key={index} value={job.title}>
-                                        {job.title}
+                                {availableJobs.map((job, i) => (
+                                    <option key={i} value={job}>
+                                        {job}
                                     </option>
                                 ))}
                             </select>
