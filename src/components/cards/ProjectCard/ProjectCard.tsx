@@ -6,21 +6,21 @@ import Image from 'next/image'
 
 interface ProjectCardProps {
     title: string
+    slug: string
     excerpt: string
     image: string
-    url: string
     loading?: 'lazy' | 'eager'
 }
 
 export default function ProjectCard({
     title,
+    slug,
     excerpt,
     image,
-    url,
     loading = 'lazy',
 }: ProjectCardProps) {
     return (
-        <a key={url} href={url} className={clsx(styles.project, 'animate')}>
+        <a href={`/portfolio/${slug}`} className={clsx(styles.project, 'animate')}>
             <Image 
                 src={image} 
                 alt={`${title} Project`} 
