@@ -9,17 +9,26 @@ interface ProjectCardProps {
     excerpt: string
     image: string
     url: string
+    loading?: 'lazy' | 'eager'
 }
 
 export default function ProjectCard({
     title,
     excerpt,
     image,
-    url
+    url,
+    loading = 'lazy',
 }: ProjectCardProps) {
     return (
         <a key={url} href={url} className={clsx(styles.project, 'animate')}>
-            <Image src={image} alt={`${title} Project`} className={styles.projectImage} width={1200} height={750} />
+            <Image 
+                src={image} 
+                alt={`${title} Project`} 
+                className={styles.projectImage} 
+                width={1200} 
+                height={750} 
+                loading={loading}
+            />
             <div className={styles.projectDesc}>
                 <h2 className={styles.projectTitle}>{title}</h2>
                 <p className={styles.projectExcerpt}>{excerpt}</p>

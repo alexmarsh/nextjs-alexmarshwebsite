@@ -91,7 +91,11 @@ export default function Portfolio() {
                     </form>
                     <div className={styles.portfolioWrapper}>
                         {filteredPortfolio.map((project, i) => (
-                            <ProjectCard key={i} {...project} />
+                            <ProjectCard 
+                                key={i} 
+                                {...project} 
+                                loading={i < 3 ? 'eager' : 'lazy'}
+                            />
                         ))}
                     </div>
                 </div>
