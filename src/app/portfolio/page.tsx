@@ -57,8 +57,9 @@ export default function Portfolio() {
                 <div className="container">
                     <form className={clsx(styles.portfolioFilters, "form")}>
                         <span className={styles.legend}>Filter:</span>
-                        <label>
+                        <label htmlFor="technology_filter">
                             <select
+                                id="technology_filter"
                                 name="technology"
                                 aria-label="Filter Technology"
                                 value={selectedTech}
@@ -72,8 +73,9 @@ export default function Portfolio() {
                                 ))}
                             </select>
                         </label>
-                        <label>
+                        <label htmlFor="job_filter">
                             <select
+                                id="job_filter"
                                 name="job"
                                 aria-label="Filter Job"
                                 value={selectedJob}
