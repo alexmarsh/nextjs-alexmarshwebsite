@@ -6,7 +6,7 @@ import Image from 'next/image'
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
 import styles from "./about.module.scss"
-import { experienceData } from '@/data/experience'
+import { experience } from '@/data/experience'
 import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard'
 
 export default function About() {
@@ -53,7 +53,7 @@ export default function About() {
                         <h3>Some of my previous employers</h3>
                     </div>
                     <div className={styles.displayExperience}>
-                        {experienceData.map((item, idx) => (
+                        {experience.map((item, idx) => (
                             <ExperienceCard key={idx} {...item} />
                         ))}
                     </div>

@@ -1,6 +1,6 @@
 // src/data/experience.ts
 
-export interface ExperienceItem {
+export interface Job {
     logo: string
     title: string
     role: string
@@ -10,7 +10,7 @@ export interface ExperienceItem {
     description: string
 }
 
-export const experienceData: ExperienceItem[] = [
+export const experience: Job[] = [
     {
         logo: '/img/experience/alex-marsh-logo.webp',
         title: 'Alex Marsh Web Development',
