@@ -1,9 +1,10 @@
 // src/hooks/useAnimateOnScroll.ts
+
 'use client'
 
 import { useEffect } from 'react'
 
-export default function useAnimateOnScroll() {
+export default function useAnimateOnScroll(deps: any[] = []) {
     useEffect(() => {
         const animatedElements = document.querySelectorAll('.animate')
         if (!animatedElements.length) return
@@ -23,5 +24,5 @@ export default function useAnimateOnScroll() {
 
         animatedElements.forEach(el => observer.observe(el))
         return () => observer.disconnect()
-    }, [])
+    }, deps)
 }
