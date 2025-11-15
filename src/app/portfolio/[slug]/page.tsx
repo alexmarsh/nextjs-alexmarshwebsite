@@ -74,13 +74,13 @@ export default async function PortfolioProjectPage({ params }: PortfolioPageProp
 
                             {prevProject && (
                                 <div className={styles.navPrevious}>
-                                    <Link className="button" href={`/portfolio/${prevProject.slug}`} rel="prev">&laquo; {prevProject.title}</Link>
+                                    <Link className="button" href={`/portfolio/${prevProject.slug}/`} rel="prev">&laquo; {prevProject.title}</Link>
                                 </div>
                             )}
 
                             {nextProject && (
                                 <div className={styles.navNext}>
-                                    <Link className="button" href={`/portfolio/${nextProject.slug}`} rel="next">{nextProject.title} &raquo;</Link>
+                                    <Link className="button" href={`/portfolio/${nextProject.slug}/`} rel="next">{nextProject.title} &raquo;</Link>
                                 </div>
                             )}
 
