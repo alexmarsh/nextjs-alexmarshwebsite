@@ -7,7 +7,7 @@ type ChangeFreq = 'yearly' | 'weekly' | 'monthly' | 'always' | 'hourly' | 'daily
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = [
-        { path: '/', changeFreq: 'monthly' as ChangeFreq, priority: 1 },
+        { path: '', changeFreq: 'monthly' as ChangeFreq, priority: 1 },
         { path: '/services/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
         { path: '/about/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
         { path: '/contact/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
