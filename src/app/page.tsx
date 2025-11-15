@@ -18,7 +18,7 @@ export default function Home() {
                     <hr className="animate" />
                     <h2 className="animate">Web Design &amp; Development</h2>
                     <div className={clsx(styles.ctaWrapper, "animate")}>
-                        <Link className="button button--inverted" href="/contact/">Get in Touch</Link>
+                        <Link className="button button--inverted" href="/contact/" prefetch={false}>Get in Touch</Link>
                         <a className="button button--inverted" href="#intro">Learn More</a>
                     </div>
                 </div>

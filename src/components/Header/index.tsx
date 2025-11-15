@@ -19,7 +19,7 @@ export default function Header() {
         <header className={styles.siteHeader}>
             <div className={clsx('container', styles.container)}>
                 <div className={styles.siteBranding}>
-                    <Link href="/" aria-label="Alex Marsh" className={styles.logoLink}>
+                    <Link href="/" aria-label="Alex Marsh" className={styles.logoLink} prefetch={false}>
                         <span className={clsx('icon-logo', styles.iconLogo)} aria-hidden="true" />
                         Alex Marsh
                     </Link>
@@ -38,10 +38,7 @@ export default function Header() {
                             { href: '/contact/', label: 'Contact' },
                         ].map(({ href, label }) => (
                             <li key={href}>
-                                <Link
-                                    href={href}
-                                    className={clsx(pathname === href && styles.active)}
-                                >
+                                <Link href={href} className={clsx(pathname === href && styles.active)} prefetch={false}>
                                     {label}
                                 </Link>
                             </li>
