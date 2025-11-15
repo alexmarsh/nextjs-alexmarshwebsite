@@ -49,6 +49,7 @@ export default async function PortfolioProjectPage({ params }: PortfolioPageProp
                         src={project.image}
                         className={styles.projectImage}
                         alt={project.title}
+                        loading='eager'
                     />
 
                     <h1>{project.title}</h1>
