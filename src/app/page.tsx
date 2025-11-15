@@ -23,7 +23,7 @@ export default function Home() {
                     </div>
                 </div>
             </header>
-            <section className={clsx("section", styles.intro)}>
+            <section id="intro" className={clsx("section", styles.intro)}>
                 <div className="container">
                     <div className={clsx(styles.contentWrapper, "narrow-content animate")}>
                         <div className="section-header">
@@ -103,7 +103,7 @@ c-4.148-3.63-9.075-6.482-14.003-8.297l-1.814-0.519v-1.816v-15.558c0-1.296-1.037-
                     </div>
                     <div className={clsx(styles.servicesFooter, "animate")}>
                         <p>Looking for something not shown here?</p>
-                        <a className="button" href="/services">View More Services ›</a>
+                        <Link className="button" href="/services/">View More Services ›</Link>
                     </div>
                 </div>
             </section>
@@ -111,7 +111,7 @@ c-4.148-3.63-9.075-6.482-14.003-8.297l-1.814-0.519v-1.816v-15.558c0-1.296-1.037-
                 <div className="container">
                     <div className={clsx(styles.contentWrapper, "narrow-content animate")}>
                         <h2>Are you looking for a high quality website for your organization or company at an affordable price?</h2>
-                        <a className="button--inverted" href="https://alexmarshprod.wpengine.com/contact/">Request Free Consultation</a>
+                        <Link className="button--inverted" href="/contact/">Request Free Consultation</Link>
                     </div>
                 </div>
             </section>
