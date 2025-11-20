@@ -6,6 +6,7 @@ import { useState, useMemo } from "react"
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
 import useSmoothScroll from '@/hooks/useSmoothScroll'
+import { event } from "@/lib/gtag"
 import styles from "./portfolio.module.scss"
 import { portfolio } from '@/data/portfolio'
 import { technologies, TechnologyTitle } from '@/data/technologies'
@@ -65,7 +66,18 @@ export default function Portfolio() {
                                 name="technology"
                                 aria-label="Filter Technology"
                                 value={selectedTech}
-                                onChange={(e) => setSelectedTech(e.target.value as TechnologyTitle | '')}
+                                onChange={(e) => {
+                                    const tech = e.target.value as TechnologyTitle | ''
+                                    setSelectedTech(tech)
+
+                                    // GA event
+                                    if (tech) {
+                                        event("portfolio_filter", {
+                                            category: "Portfolio",
+                                            label: `Technology: ${tech}`,
+                                        })
+                                    }
+                                }}
                             >
                                 <option value="">Any technology</option>
                                 {availableTechnologies.map((tech, i) => (
@@ -81,7 +93,18 @@ export default function Portfolio() {
                                 name="job"
                                 aria-label="Filter Job"
                                 value={selectedJob}
-                                onChange={(e) => setSelectedJob(e.target.value as JobTitle | '')}
+                                onChange={(e) => {
+                                    const job = e.target.value as JobTitle | ''
+                                    setSelectedJob(job)
+
+                                    // GA event
+                                    if (job) {
+                                        event("portfolio_filter", {
+                                            category: "Portfolio",
+                                            label: `Job: ${job}`,
+                                        })
+                                    }
+                                }}
                             >
                                 <option value="">Any job</option>
                                 {availableJobs.map((job, i) => (
@@ -91,7 +114,17 @@ export default function Portfolio() {
                                 ))}
                             </select>
                         </label>
-                        <button className="button" type="button" onClick={handleReset}>Reset</button>
+                        <button
+                            className="button"
+                            type="button"
+                            onClick={() => {
+                                handleReset()
+                                event("portfolio_filter_reset", {
+                                    category: "Portfolio",
+                                    label: "Filters reset",
+                                })
+                            }}
+                        >Reset</button>
                     </form>
                     <div className={styles.portfolioWrapper}>
                         {filteredPortfolio.map((project, i) => (
