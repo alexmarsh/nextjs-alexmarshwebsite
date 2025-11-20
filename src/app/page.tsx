@@ -4,6 +4,7 @@
 
 import Link from 'next/link'
 import clsx from "clsx"
+import { event } from "@/lib/gtag";
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
 import useSmoothScroll from '@/hooks/useSmoothScroll'
 import styles from "./page.module.scss"
@@ -20,8 +21,27 @@ export default function Home() {
                     <hr className="animate" />
                     <h2 className="animate">Web Design &amp; Development</h2>
                     <div className={clsx(styles.ctaWrapper, "animate")}>
-                        <Link className="button button--inverted" href="/contact/" prefetch={false}>Get in Touch</Link>
-                        <a className="button button--inverted" href="#intro">Learn More</a>
+                        <Link
+                            className="button button--inverted"
+                            href="/contact"
+                            prefetch={false}
+                            onClick={() =>
+                                event("cta_click", {
+                                    category: "Engagement",
+                                    label: "Homepage - Get in Touch",
+                                })
+                            }
+                        >Get in Touch</Link>
+                        <a
+                            className="button button--inverted"
+                            href="#intro"
+                            onClick={() =>
+                                event("cta_click", {
+                                    category: "Engagement",
+                                    label: "Homepage - Learn More",
+                                })
+                            }
+                        >Learn More</a>
                     </div>
                 </div>
             </header>
@@ -105,7 +125,17 @@ c-4.148-3.63-9.075-6.482-14.003-8.297l-1.814-0.519v-1.816v-15.558c0-1.296-1.037-
                     </div>
                     <div className={clsx(styles.servicesFooter, "animate")}>
                         <p>Looking for something not shown here?</p>
-                        <Link className="button" href="/services/" prefetch={false}>View More Services ›</Link>
+                        <Link 
+                            className="button" 
+                            href="/services" 
+                            prefetch={false}
+                            onClick={() =>
+                                event("cta_click", {
+                                    category: "Engagement",
+                                    label: "Homepage - View More Services",
+                                })
+                            }
+                        >View More Services ›</Link>
                     </div>
                 </div>
             </section>
@@ -113,7 +143,17 @@ c-4.148-3.63-9.075-6.482-14.003-8.297l-1.814-0.519v-1.816v-15.558c0-1.296-1.037-
                 <div className="container">
                     <div className={clsx(styles.contentWrapper, "narrow-content animate")}>
                         <h2>Are you looking for a high quality website for your organization or company at an affordable price?</h2>
-                        <Link className="button--inverted" href="/contact/" prefetch={false}>Request Free Consultation</Link>
+                        <Link 
+                            className="button button--inverted" 
+                            href="/contact" 
+                            prefetch={false}
+                            onClick={() =>
+                                event("cta_click", {
+                                    category: "Engagement",
+                                    label: "Homepage - Request Free Consultation",
+                                })
+                            }
+                        >Request Free Consultation</Link>
                     </div>
                 </div>
             </section>
