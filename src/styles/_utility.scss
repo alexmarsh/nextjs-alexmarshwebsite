@@ -12,11 +12,14 @@
         height: auto;
         top: 5px;
         left: 5px;
-        padding: 15px 20px;
+        padding: 15px;
         text-decoration: none;
         width: auto;
         z-index: 100000;
         outline: 2px solid;
         position: fixed;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1;
     }
 }
