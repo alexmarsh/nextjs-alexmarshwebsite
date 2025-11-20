@@ -57,8 +57,8 @@ export default function Services() {
                 </section>
                 <section className={clsx(styles.sectionCta, "section")}>
                     <div className={clsx(styles.ctaWrapper, "container animate")}>
-                        <h2 className="heading" /*style="margin-bottom:0"*/>Interested?</h2>
-                        <Link className="button button--inverted" href="/contact/" prefetch={false}>Contact Me</Link>
+                        <h2 className="heading">Interested?</h2>
+                        <Link className="button button--inverted" href="/contact" prefetch={false}>Contact Me</Link>
                     </div>
                 </section>
                 <section className={clsx(styles.sectionProcess, "section")}>
