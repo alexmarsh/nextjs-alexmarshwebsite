@@ -16,7 +16,7 @@ export default function Header() {
     }, [pathname])
 
     return (
-        <header className={styles.siteHeader}>
+        <header className={clsx('site-header', styles.siteHeader)}>
             <div className={clsx('container', styles.container)}>
                 <div className={styles.siteBranding}>
                     <Link href="/" aria-label="Alex Marsh" className={styles.logoLink} prefetch={false}>
