@@ -1,8 +1,6 @@
 // src/app/contact/page.tsx
 
 import type { Metadata } from "next"
-import clsx from "clsx"
-import styles from "./contact.module.scss"
 import PageContent from './PageContent'
 
 export const generateMetadata = (): Metadata => ({
@@ -12,8 +10,6 @@ export const generateMetadata = (): Metadata => ({
 
 export default function Contact() {
     return (
-        <main className={clsx(styles.main, "site-main")}>
-            <PageContent />
-        </main>
+        <PageContent />
     )
 }

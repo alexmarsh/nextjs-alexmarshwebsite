@@ -5,15 +5,17 @@
 import Image from 'next/image'
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
+import useSmoothScroll from '@/hooks/useSmoothScroll'
 import styles from "./about.module.scss"
 import { experience } from '@/data/experience'
 import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard'
 
 export default function PageContent() {
     useAnimateOnScroll()
+    useSmoothScroll()
 
     return (
-        <>
+        <main id="site-main" className="site-main">
             <header className={clsx(styles.pageHeader, "page-header")}>
                 <div className="container">
                     <h1 className="heading animate">About Me</h1>
@@ -22,7 +24,7 @@ export default function PageContent() {
             <section className={clsx(styles.sectionIntro, "section")}>
                 <div className="container">
                     <figure className={clsx(styles.imgWrapper, "animate")}>
-                        <Image src="/img/amarsh-portrait-transparent.webp" alt="Portrait of Alex Marsh" width={445} height={636}/>
+                        <Image src="/img/amarsh-portrait-transparent.webp" alt="Portrait of Alex Marsh" width={445} height={636} />
                     </figure>
                     <div className={clsx(styles.contentWrapper, "animate")}>
                         <div className="section-header">
@@ -59,6 +61,6 @@ export default function PageContent() {
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     )
 }

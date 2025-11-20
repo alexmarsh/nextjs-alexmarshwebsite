@@ -2,18 +2,18 @@
 
 'use client'
 
-import Link from 'next/link';
-import clsx from "clsx";
+import Link from 'next/link'
+import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
-import useSmoothScroll from '@/hooks/useSmoothScroll';
-import styles from "./page.module.scss";
+import useSmoothScroll from '@/hooks/useSmoothScroll'
+import styles from "./page.module.scss"
 
 export default function Home() {
     useAnimateOnScroll()
     useSmoothScroll()
 
     return (
-        <main className="site-main">
+        <main id="site-main" className="site-main">
             <header className={styles.pageHeader}>
                 <div className={styles.contentWrapper}>
                     <h1 className="animate">Alex Marsh</h1>

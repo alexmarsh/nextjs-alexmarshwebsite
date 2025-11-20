@@ -22,7 +22,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
     return (
         <div className={styles.projectWrapper}>
-            <Link href={`/portfolio/${slug}/`} className={clsx(styles.project, 'animate')} prefetch={false}>
+            <Link href={`/portfolio/${slug}`} className={clsx(styles.project, 'animate')} prefetch={false}>
                 <Image
                     src={image}
                     alt={`${title} Project`}

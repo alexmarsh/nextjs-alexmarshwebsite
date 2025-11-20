@@ -10,8 +10,6 @@ export const generateMetadata = (): Metadata => ({
 
 export default function Portfolio() {
     return (
-        <main className="site-main">
-            <PageContent />
-        </main>
+        <PageContent />
     )
 }

@@ -8,15 +8,15 @@ type ChangeFreq = 'yearly' | 'weekly' | 'monthly' | 'always' | 'hourly' | 'daily
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = [
         { path: '', changeFreq: 'monthly' as ChangeFreq, priority: 1 },
-        { path: '/services/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
-        { path: '/about/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
-        { path: '/contact/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
-        { path: '/portfolio/', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
+        { path: '/services', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
+        { path: '/about', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
+        { path: '/contact', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
+        { path: '/portfolio', changeFreq: 'monthly' as ChangeFreq, priority: 0.8 },
     ]
 
     // Map dynamic portfolio routes
     const dynamicPortfolioRoutes = portfolio.map(project => ({
-        url: `https://alexmarshwebsite.com/portfolio/${project.slug}/`,
+        url: `https://alexmarshwebsite.com/portfolio/${project.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as ChangeFreq,
         priority: 0.5,

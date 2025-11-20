@@ -17,7 +17,7 @@ export default function Services() {
     useAnimateOnScroll()
 
     return (
-        <>
+        <main id="site-main" className="site-main">
             <main className="site-main">
                 <header className={clsx(styles.pageHeader, "page-header animate")}>
                     <div className="container">
@@ -113,6 +113,6 @@ export default function Services() {
                     </div>
                 </section>
             </main>
-        </>
+        </main>
     )
 }

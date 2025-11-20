@@ -4,14 +4,16 @@
 
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
+import useSmoothScroll from '@/hooks/useSmoothScroll'
 import styles from "./contact.module.scss"
 import ContactForm from "@/components/forms/ContactForm/ContactForm"
 
 export default function Contact() {
     useAnimateOnScroll()
+    useSmoothScroll()
 
     return (
-        <>
+        <main id="site-main" className={clsx(styles.main, "site-main")}>
             <header className={clsx(styles.pageHeader, "page-header")}>
                 <div className="container">
                     <h1 className="heading animate">Contact</h1>
@@ -21,10 +23,10 @@ export default function Contact() {
                 <div className="container">
                     <p className="animate">Want to get in touch? I'd love the chance to talk with you about bringing your website visions to life and improving your online presence. Fill out the form below and I'll get back to you as soon as possible!</p>
                     <div className={clsx(styles.formContainer, "animate")}>
-                        <ContactForm/>
+                        <ContactForm />
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     )
 }

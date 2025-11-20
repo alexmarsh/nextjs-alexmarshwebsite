@@ -5,6 +5,7 @@
 import { useState, useMemo } from "react"
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
+import useSmoothScroll from '@/hooks/useSmoothScroll'
 import styles from "./portfolio.module.scss"
 import { portfolio } from '@/data/portfolio'
 import { technologies, TechnologyTitle } from '@/data/technologies'
@@ -45,9 +46,10 @@ export default function Portfolio() {
     }
 
     useAnimateOnScroll([filteredPortfolio.length])
+    useSmoothScroll()
 
     return (
-        <>
+        <main id="site-main" className="site-main">
             <header className={clsx(styles.pageHeader, "page-header")}>
                 <div className="container">
                     <h1 className="animate">Portfolio</h1>
@@ -93,15 +95,15 @@ export default function Portfolio() {
                     </form>
                     <div className={styles.portfolioWrapper}>
                         {filteredPortfolio.map((project, i) => (
-                            <ProjectCard 
-                                key={i} 
-                                {...project} 
+                            <ProjectCard
+                                key={i}
+                                {...project}
                                 loading={i < 3 ? 'eager' : 'lazy'}
                             />
                         ))}
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     )
 }

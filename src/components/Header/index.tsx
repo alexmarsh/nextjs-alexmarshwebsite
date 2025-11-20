@@ -32,10 +32,10 @@ export default function Header() {
                 >
                     <ul className={styles.menu}>
                         {[
-                            { href: '/services/', label: 'Services' },
-                            { href: '/portfolio/', label: 'Portfolio' },
-                            { href: '/about/', label: 'About' },
-                            { href: '/contact/', label: 'Contact' },
+                            { href: '/services', label: 'Services' },
+                            { href: '/portfolio', label: 'Portfolio' },
+                            { href: '/about', label: 'About' },
+                            { href: '/contact', label: 'Contact' },
                         ].map(({ href, label }) => (
                             <li key={href}>
                                 <Link href={href} className={clsx(pathname === href && styles.active)} prefetch={false}>
