@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from "clsx"
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll'
+import useSmoothScroll from '@/hooks/useSmoothScroll'
 import styles from "./services.module.scss"
 import Slider from "@/components/Slider/Slider"
 import { services } from '@/data/services'
@@ -15,6 +16,7 @@ import TechItem from '@/components/TechItem/TechItem'
 
 export default function Services() {
     useAnimateOnScroll()
+    useSmoothScroll()
 
     return (
         <main id="site-main" className="site-main">
