@@ -31,7 +31,7 @@ export default function Portfolio() {
     const availableTechnologies = useMemo(() => {
         return technologies
             .map(t => t.title)
-            .filter(title => !selectedJob || portfolio.some(p => p.jobTitle === selectedJob && p.technologies.includes(title)))
+            .filter(title => portfolio.some(p => p.technologies.includes(title) && (!selectedJob || p.jobTitle === selectedJob)))
     }, [selectedJob])
 
     // Compute available job titles based on selected technology
