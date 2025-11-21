@@ -204,18 +204,19 @@
         align-items: center;
         gap: 60px;
 
-        @include mixins.responsive-below('xl') {
+        @include mixins.responsive-below('lg') {
             flex-direction: column;
             gap: 30px;
         }
     }
 
-    .contentWrapper,
-    .techList {
-        flex: 1 1 100%;
-    }
-
     .contentWrapper {
+        flex: 1 1 60%;
+
+        @include mixins.responsive-below('xl') {
+            flex: 1 1 50%;
+        }
+
         &:global(.animate) {
             opacity: 0;
             transform: scale(.5);
@@ -230,22 +231,27 @@
     }
 
     .techList {
+        flex: 1 1 40%;
         list-style: none;
         padding: 0 0 3%;
         margin: 0;
         display: flex;
         flex-wrap: wrap;
         color: #fff;
-        max-width: 650px;
+        max-width: 500px;
+
+        @include mixins.responsive-below('xl') {
+            flex: 1 1 50%;
+        }
 
         li {
-            width: calc(100% / 5);
+            width: calc(100% / 4);
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
             padding: 10px;
-            margin-bottom: -5.5%;
+            margin-bottom: -6%;
             transform: scale(0);
             opacity: 0;
             transition: transform 1s, opacity 1s;
@@ -255,43 +261,20 @@
                 content: none;
             }
 
-            &:nth-child(9n+6) {
-                margin-left: calc(100% / 10);
+            &:nth-child(7n+5) {
+                margin-left: calc(100% / 8);
             }
 
+            /*
             &:nth-child(12n+7) {
                 margin-left: 0;
             }
+            */
 
             &:global(.animate--visible) {
                 transform: scale(1);
                 opacity: 1;
             }
-
-            /*
-            @include mixins.responsive-below('xl') {
-                width: calc(100% / 8);
-                margin-bottom: -3%;
-
-                &:nth-child(9n+6) {
-                    margin-left: 0;
-                }
-                &:nth-child(15n+9) {
-                    margin-left: calc(100% / 16);
-                }
-            }
-            @include mixins.responsive-below('md') {
-                width: calc(100% / 5);
-                margin-bottom: -5.5%;
-
-                &:nth-child(9n+6) {
-                    margin-left: calc(100% / 10);
-                }
-                &:nth-child(15n+9) {
-                    margin-left: 0;
-                }
-            }
-            */
         }
     }
 }

@@ -25,7 +25,7 @@ export const portfolio: Project[] = [
         jobTitle: "[Re]noun Creative",
         technologies: [
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'PHP', 
             'Responsive Design', 
@@ -46,7 +46,7 @@ export const portfolio: Project[] = [
             'CSS3', 
             'Git', 
             'Google Analytics', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'PHP', 
             'Responsive Design', 
@@ -68,7 +68,7 @@ export const portfolio: Project[] = [
             'CSS3', 
             'Git', 
             'Google Analytics', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'PHP', 
             'Responsive Design', 
@@ -90,7 +90,7 @@ export const portfolio: Project[] = [
             'CSS3', 
             'Git', 
             'Google Analytics', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'PHP', 
             'Responsive Design', 
@@ -110,9 +110,8 @@ export const portfolio: Project[] = [
             'Adobe Photoshop', 
             'CSS3', 
             'Git', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
-            'jQuery', 
             'PHP', 
             'Responsive Design', 
             'UI/UX', 
@@ -133,7 +132,7 @@ export const portfolio: Project[] = [
             'CSS3', 
             'Git', 
             'Google Analytics', 
-            'HTML5', 
+            'HTML(5)', 
             'PHP', 
             'Responsive Design', 
             'UI/UX', 
@@ -153,7 +152,7 @@ export const portfolio: Project[] = [
             'Adobe Illustrator', 
             'Adobe Photoshop', 
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'Responsive Design', 
             'SVG', 
@@ -173,7 +172,7 @@ export const portfolio: Project[] = [
             'Adobe Photoshop', 
             'CSS3', 
             'Git', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'UI/UX'
         ]
@@ -193,12 +192,9 @@ export const portfolio: Project[] = [
             'Bootstrap', 
             'CSS3', 
             'Google Analytics', 
-            'Google Calendar API', 
-            'Google Maps API', 
-            'HTML5', 
-            'Instagram API', 
+            'Google APIs', 
+            'HTML(5)',
             'JavaScript', 
-            'jQuery', 
             'PHP', 
             'Responsive Design', 
             'SVG', 
@@ -218,8 +214,7 @@ export const portfolio: Project[] = [
         technologies: [
             'Adobe Illustrator', 
             'CSS3', 
-            'D3.js', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'Progressive Web Apps', 
             'SVG', 
@@ -237,9 +232,8 @@ export const portfolio: Project[] = [
         jobTitle: "Alex Marsh Web Development",
         technologies: [
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
-            'jQuery', 
             'UI/UX'
         ]
     },
@@ -257,13 +251,9 @@ export const portfolio: Project[] = [
             'Bootstrap', 
             'CSS3', 
             'Google Analytics', 
-            'HTML5', 
-            'Instagram API', 
+            'HTML(5)', 
             'JavaScript', 
-            'jQuery', 
-            'PHP', 
-            'SoundCloud API', 
-            'Twitter API'
+            'PHP',
         ]
     },
     {
@@ -278,10 +268,9 @@ export const portfolio: Project[] = [
         technologies: [
             'Bootstrap', 
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'JSP / JSTL', 
-            'jQuery', 
             'SQL / PostgreSQL'
         ]
     },
@@ -298,7 +287,6 @@ export const portfolio: Project[] = [
             'Bootstrap', 
             'CSS3', 
             'JavaScript', 
-            'jQuery', 
             'PHP', 
             'WordPress'
         ]
@@ -316,10 +304,9 @@ export const portfolio: Project[] = [
         technologies: [
             'Bootstrap', 
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
             'JSP / JSTL', 
-            'jQuery', 
             'SQL / PostgreSQL'
         ]
     },
@@ -334,9 +321,8 @@ export const portfolio: Project[] = [
         jobTitle: "Citi",
         technologies: [
             'CSS3', 
-            'D3.js', 
+            'HTML(5)', 
             'JavaScript', 
-            'jQuery', 
             'SVG'
         ]
     },
@@ -352,9 +338,8 @@ export const portfolio: Project[] = [
         technologies: [
             'Bootstrap', 
             'CSS3', 
-            'HTML5', 
+            'HTML(5)', 
             'JavaScript', 
-            'jQuery'
         ]
     },
     {
@@ -366,8 +351,9 @@ export const portfolio: Project[] = [
             `<p>Recognizing the shift toward mobile-first content consumption, I led the development of the business line's first custom, responsive, and fully branded HTML email templates. Using modern email templating tools and in-depth research, I built templates optimized for mobile devices without compromising compatibility or performance. To ensure a consistent experience across clients and devices, I leveraged Litmus for comprehensive testing and refinement. This project helped bring the department's email communications up to current standards in both design and deliverability.</p>`,
         jobTitle: "Citi",
         technologies: [
-            'CSS3'
-        ] // "HTML Emails" and "Litmus" are not in your TechnologyTitle type
+            'CSS3',
+            'HTML(5)'
+        ]
     },
     {
         title: "Mattel Customer Service",
@@ -380,8 +366,8 @@ export const portfolio: Project[] = [
         jobTitle: "AURORA Consulting Group",
         technologies: [
             'CSS3', 
-            'HTML5', 
-            'jQuery'
+            'HTML(5)', 
+            'JavaScript'
         ]
     },
     {
@@ -395,10 +381,9 @@ export const portfolio: Project[] = [
         jobTitle: "Citi",
         technologies: [
             'CSS3', 
-            'Google Maps API', 
-            'HTML5', 
-            'JavaScript', 
-            'jQuery'
+            'Google APIs', 
+            'HTML(5)', 
+            'JavaScript',
         ]
     },
 ]
