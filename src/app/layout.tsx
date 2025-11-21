@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../styles/_global.scss";
 import { Kaushan_Script, Open_Sans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const kaushanScript = Kaushan_Script({
     subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 {children}
                 <Footer />
+                <SpeedInsights />
             </body>
         </html>
     );
