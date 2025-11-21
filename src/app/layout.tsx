@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         siteName: "Alex Marsh Website",
         images: [
             {
-                url: "/img/screenshot.png",
+                url: "https://alexmarshwebsite.com/img/screenshot.png",
                 width: 1200,
                 height: 630,
                 alt: "Alex Marsh Website Preview",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
         ],
     },
     icons: {
-        icon: "/img/logo.svg",
-        shortcut: "/img/logo.svg",
-        apple: "/img/logo.svg",
+        icon: "https://alexmarshwebsite.com/img/logo.svg",
+        shortcut: "https://alexmarshwebsite.com/img/logo.svg",
+        apple: "https://alexmarshwebsite.com/img/logo.svg",
     },
 };
 
