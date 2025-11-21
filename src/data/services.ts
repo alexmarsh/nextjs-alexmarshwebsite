@@ -1,27 +1,40 @@
 // src/data/services.ts
-export const services = [
+
+export interface Service {
+    title: string
+    slug: string
+    description: string
+}
+
+export const services: Service[] = [
     {
         title: 'Web Design & Development',
-        description: 'I build beautiful custom websites, keeping them unique, functional and modern. Whatever your needs may be, you can expect a custom solution designed to meet your goals and look great on any device.'
+        slug: 'web-design-development',
+        description: 'Custom-built websites that look great, load quickly, and scale with your business. Designed for clarity, conversions, and long-term growth across all devices.'
     },
     {
-        title: 'WordPress Content Management',
-        description: 'Keeping your website up to date and relevant is essential for any business trying to attract new customers. By developing websites using a content management system built in, you can make changes quickly and easily, on your schedule.'
+        title: 'WordPress Development',
+        slug: 'wordpress-development',
+        description: 'Flexible WordPress sites built for easy content management, tailored to your needs. Includes custom themes, block setup, and editor training so you stay in control.'
     },
     {
-        title: 'Search Engine Optimization',
-        description: 'One of the key parts of having a website is making sure it’s found by search engines like Google, and more importantly your customers. By optimizing your site-specific metadata, I can improve your odds of increasing your website traffic, leading to increased sales revenue potential.'
+        title: 'E-Commerce Development',
+        slug: 'ecommerce-development',
+        description: 'Professional online stores built on WooCommerce. Includes catalog setup, secure payments, and a storefront optimized for both selling and usability.'
     },
     {
-        title: 'E-Commerce',
-        description: 'Are you looking for an easy solution to sell your goods and services online? With a professionally set up online shop powered by WooCommerce you can run your very own e-commerce store with no technical skills required.'
+        title: 'SEO & Performance Optimization',
+        slug: 'seo-performance-optimization',
+        description: 'Improve your site\'s search visibility and load speed with technical SEO, metadata tuning, analytics setup, and performance audits that drive real results.'
     },
     {
         title: 'Maintenance & Support',
-        description: 'As a website maintenance and support provider, I will work with you to get your business online and keep it that way. I offer a range of on-going support and maintenance services to ensure that your website is always up and running smoothly.'
+        slug: 'maintenance-support',
+        description: 'Keep your site running smoothly with ongoing updates, security checks, backups, and performance tuning. No more worrying about downtime or stale content.'
     },
     {
-        title: 'Analytics',
-        description: 'Get actionable data to maximize website performance and improve ROI with KPI-focused traffic analysis and marketing optimization reports, multivariate testing, and website user analysis.'
+        title: 'Website Audits & Consulting',
+        slug: 'website-audits-consulting',
+        description: 'Actionable site audits and strategic consulting to uncover UX issues, SEO opportunities, and performance bottlenecks—so you can plan smart improvements.'
     }
-]
+];
