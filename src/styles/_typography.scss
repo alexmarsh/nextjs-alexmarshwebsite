@@ -38,7 +38,7 @@ h5 {
     margin-bottom: .75em;
     letter-spacing: normal;
     font-weight: 400;
-    color: #0E7395;
+    color: colors.color-get(color-5);
 }
 
 h1 {
@@ -98,7 +98,7 @@ ul {
 
         &::before {
             content: "•";
-            color: colors.color-get("color-5");
+            color: colors.color-get(color-5);
             position: absolute;
             left: 0;
             font-size: 1.25em;
@@ -108,7 +108,7 @@ ul {
 
 a {
     text-decoration: underline;
-    color: colors.color-get("color-5");
+    color: colors.color-get(color-5);
 
     &:hover,
     &:focus {
