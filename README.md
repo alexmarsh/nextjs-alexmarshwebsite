@@ -1,60 +1,68 @@
-# Headless Version of alexmarshwebsite.com
+# alexmarshwebsite.com (Next.js Version)
 
 ## Overview  
-This project is a headless rebuild of [alexmarshwebsite.com](https://alexmarshwebsite.com), originally built on WordPress with custom Gutenberg components. The new version uses **Sanity** as the content backend and **Next.js** for a React-based frontend with server-side rendering (SSR). The goal is a pixel-perfect, feature-complete reproduction optimized for performance, accessibility, and SEO.
+This is the current version of alexmarshwebsite.com, built using Next.js with fully static content. The site showcases Alex Marsh’s portfolio, services, and projects with a fast, React-based frontend.
 
-Eventually, this will serve as a case study comparing speed, SEO, and developer experience between WordPress and the headless JAMstack setup.
+The project focuses on maintainable static rendering, optimized for performance, accessibility, and SEO, without any CMS or backend.
 
 ## Current Status  
-- Core app structure and routing implemented  
-- Sanity schemas designed for some site content  
-- Initial custom components built (Home Hero, Page Header, Button Group, etc.)  
-- Content fetching and rendering pipelines working  
-- Development and deployment pipelines established  
+- Fully functional static Next.js site
+- Custom components for pages and sections (Home Hero, Page Header, Button Group, Services, etc.)
+- Responsive design with SCSS modules and modular styling
+- Routing and dynamic project pages implemented
+- Production-ready deployment pipeline established 
 
-## Tech Stack  
-- **Frontend:** Next.js (React, TypeScript)  
-- **Backend CMS:** Sanity.io (headless CMS)  
-- **Styling:** SCSS Modules, clsx for conditional class names  
-- **Data Fetching:** GROQ queries via Sanity client  
-- **Hosting:** (Not yet established, e.g., Vercel)  
+## Tech Stack
+- **Frontend:** Next.js (React, TypeScript)
+- **Styling:** SCSS Modules, clsx for conditional class names
+- **Data:** Static JSON/TS data files for content (no CMS)
+- **Hosting:** Vercel
+- **Analytics:** Google Analytics and vercel/analytics via Next.js integration
 
 ## Getting Started  
 
 ### Prerequisites  
-- Node.js 18+  
-- npm or yarn  
-- Sanity CLI installed globally (`npm install -g @sanity/cli`)  
+- Node.js 18+
+- npm or yarn
 
 ### Setup  
 **1. Clone the repository**
 ```bash
-git clone https://github.com/alexmarsh/alexmarshwebsite-headless.git
-cd alexmarshwebsite-headless
+git clone https://github.com/alexmarsh/nextjs-alexmarshwebsite.git
+cd nextjs-alexmarshwebsite
 ```
-**2. Install dependencies and start Sanity Studio**
-```bash
-cd alexmarshwebsite-headless/sanity
-npm install
-npm run dev
-```
-- Sanity Studio will be available at http://localhost:3333 by default.  
 
-**3. In a new terminal, install dependencies and start the Frontend**
+**2. Install dependencies**
 ```bash
-cd alexmarshwebsite-headless/frontend
 npm install
+``` 
+
+**3. Start the development server**
+```bash
 npm run dev
 ```
-- Next.js frontend will be available at http://localhost:3000.
+- Site will be available at http://localhost:3000 by default.
+
+**4. Build for production**
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## Folder Structure (Key Highlights) 
+- `src/app` — Next.js App Router pages and layouts
+- `src/components` — Reusable components and UI sections (cards, header, footer, forms, sliders, etc.)
+- `src/data` — Static content for portfolio, services, experience, technologies
+- `src/styles` — Global SCSS and module styles
 
 ---
 
 ## Future Plans  
-- Expand component library and content types  
-- Implement incremental static regeneration (ISR) and preview mode  
-- Conduct detailed speed and SEO comparisons with WordPress site  
-- Improve documentation and onboarding for contributors  
+- Add services pages
+- Optimize images and accessibility further
+- Enhance analytics and user tracking
 
 ---
 
