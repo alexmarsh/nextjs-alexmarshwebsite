@@ -1,4 +1,4 @@
-// src/components/ContactForm/ContactForm.tsx
+// src/components/forms/ContactForm/ContactForm.tsx
 
 'use client'
 
