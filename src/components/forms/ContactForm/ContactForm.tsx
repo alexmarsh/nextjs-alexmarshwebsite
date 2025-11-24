@@ -12,6 +12,7 @@ export default function ContactForm() {
         email: '',
         phone: '',
         message: '',
+        website: '', // honeypot
     })
 
     const [errors, setErrors] = useState<{ [K in keyof typeof formData]?: string }>({})
@@ -19,20 +20,35 @@ export default function ContactForm() {
     const [serverError, setServerError] = useState<string | null>(null)
 
     const validateField = (name: keyof typeof formData, value: string) => {
+        if (name === 'website') return '' // skip honeypot
+
+        const trimmed = value.trim()
+
         switch (name) {
             case 'name':
-                return value.trim() ? '' : 'Name is required'
+                if (!trimmed) return 'Name is required'
+                if (trimmed.length > 200) return 'Name must be under 200 characters'
+                return ''
+
             case 'email':
-                if (!value.trim()) return 'Email is required'
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Invalid email address'
+                if (!trimmed) return 'Email is required'
+                if (trimmed.length > 200) return 'Email must be under 200 characters'
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return 'Invalid email address'
                 return ''
+
             case 'phone':
-                if (value && !/^[\d\s\-()]+$/.test(value)) return 'Phone number can only contain numbers and basic symbols'
+                if (trimmed.length > 50) return 'Phone number must be under 50 characters'
+                if (trimmed && !/^[\d\s()\-]+$/.test(trimmed))
+                    return 'Phone number can only contain numbers and basic symbols'
                 return ''
+
             case 'message':
-                return value.trim() ? '' : 'Message is required'
+                if (!trimmed) return 'Message is required'
+                if (trimmed.length > 5000) return 'Message must be under 5000 characters'
+                return ''
         }
     }
+
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const fieldName = e.target.name.toLowerCase() as keyof typeof formData
@@ -47,8 +63,14 @@ export default function ContactForm() {
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+        e.preventDefault()
         setServerError(null)
+
+        // if honeypot is filled, treat as spam
+        if (formData.website.trim() !== '') {
+            setStatus('success') // pretend success to bots
+            return
+        }
 
         const newErrors: { [K in keyof typeof formData]?: string } = {};
 
@@ -56,6 +78,9 @@ export default function ContactForm() {
             const error = validateField(key, formData[key])
             if (error) newErrors[key] = error
         })
+
+        // remove honeypot from user-visible validation
+        delete newErrors.website
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors)
@@ -72,7 +97,7 @@ export default function ContactForm() {
             const result = await res.json()
             if (res.ok) {
                 setStatus('success')
-                setFormData({ name: '', email: '', phone: '', message: '' })
+                setFormData({ name: '', email: '', phone: '', message: '', website: '' })
             } else {
                 setServerError(result.error || 'Failed to send message')
                 setStatus('error')
@@ -94,6 +119,20 @@ export default function ContactForm() {
             onSubmit={handleSubmit}
             noValidate
         >
+            {/* Honeypot: visually hidden but present in DOM */}
+            <div style={{ display: 'none' }}>
+                <label htmlFor="website">Website</label>
+                <input
+                    id="website"
+                    type="text"
+                    name="Website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={handleChange}
+                />
+            </div>
+
             {status === 'error' && serverError && (
                 <p className={styles.errorMessage}>{serverError}</p>
             )}
