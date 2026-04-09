@@ -1,0 +1,178 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/colors" as colors;
+@use "../../../styles/config" as config;
+
+.siteMain {
+    background-color: #fff;
+}
+
+.pageHeader {
+    text-align: left;
+    background-color: colors.color-get(color-5);
+
+    h1,
+    h4 {
+        color: #fff;
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    :global(.container) {
+        &:global(.animate) {
+            transition: opacity 1s;
+            opacity: 0;
+
+            &:global(.animate--visible) {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.sectionDescription {
+    h2 {
+        font-weight: 600;
+        color: initial;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+}
+
+.sectionOverlapBlock {
+    background: colors.color-get(color-4);
+    margin-top: 8rem;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .inner {
+        margin-top: -11rem;
+        background: colors.color-get(color-1);
+        border-radius: config.$border-radius;
+        overflow: hidden;
+    }
+
+    .textWrapper {
+        padding: 3rem;
+        color: #fff;
+
+        h2+h3 {
+            margin-top: -1rem;
+        }
+    }
+}
+
+.sectionCta {
+    background: colors.color-get(color-5);
+    @include mixins.noise-gradient;
+
+    h2,
+    p {
+        color: #fff;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    :global(.container) {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mixins.responsive-below(lg) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    :global(.button) {
+        text-wrap: nowrap;
+    }
+}
+
+.twoCol {
+    .title {
+        margin-bottom: 3rem;
+        color: initial;
+
+        span {
+            position: relative;
+            white-space: nowrap;
+
+            &::after {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 100%;
+                height: 3px;
+                bottom: -3px;
+                background: colors.color-get(color-5);
+                left: 0;
+            }
+        }
+    }
+
+    .columns {
+        display: flex;
+        gap: 3rem;
+
+        @include mixins.responsive-below(lg) {
+            flex-direction: column;
+        }
+    }
+
+    .col1,
+    .col2 {
+        background: colors.color-get(color-4);
+        padding: 2rem;
+        border-radius: config.$border-radius;
+
+        >*:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.sectionExamples {
+    background: colors.color-get(color-4);
+
+    h2+h3 {
+        margin-top: -1rem;
+    }
+
+    h3 {
+        color: initial;
+    }
+
+    .examples {
+        margin-top: 4rem;
+        display: flex;
+        gap: 2.75rem 1.875rem;
+        flex-wrap: wrap;
+
+        >* {
+            flex: 1 1 calc((100% / 3) - 1.875rem);
+
+            @include mixins.responsive-below(lg) {
+                flex: 1 1 calc((100% / 2) - 1.875rem);
+            }
+
+            @include mixins.responsive-below(md) {
+                flex: 1 1 100%;
+            }
+        }
+    }
+}
